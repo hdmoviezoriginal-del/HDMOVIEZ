@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Movie — HDMOVIEZ</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#08090b;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+header{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    border-bottom:1px solid #22242a;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-weight:900;
+    font-size:22px;
+    letter-spacing:2px;
+}
+
+.back{
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+}
+
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:55px 6%;
+}
+
+.movie{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:40px;
+}
+
+.poster{
+    height:410px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px;
+    background:linear-gradient(145deg,#292c33,#111216);
+    border:1px solid #292b31;
+}
+
+.label{
+    color:#888;
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+h1{
+    font-size:clamp(35px,6vw,60px);
+    margin-bottom:15px;
+}
+
+.meta{
+    color:#999;
+    margin-bottom:25px;
+    line-height:1.8;
+}
+
+.description{
+    color:#aaa;
+    line-height:1.7;
+    max-width:650px;
+}
+
+.watch-section{
+    margin-top:35px;
+    padding:25px;
+    border-radius:16px;
+    background:#121317;
+    border:1px solid #292b31;
+}
+
+.watch-section h2{
+    margin-bottom:10px;
+}
+
+.watch-section p{
+    color:#888;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.button{
+    display:inline-block;
+    padding:13px 20px;
+    border-radius:10px;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.note{
+    margin-top:15px;
+    color:#666;
+    font-size:11px;
+}
+
+.similar{
+    margin-top:60px;
+}
+
+.similar-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(150px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.card{
+    padding:20px;
+    background:#121317;
+    border:1px solid #25272c;
+    border-radius:14px;
+    text-align:center;
+}
+
+.card .small-poster{
+    height:170px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+    background:#202228;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    font-size:14px;
+}
+
+footer{
+    margin-top:50px;
+    padding:40px 20px;
+    text-align:center;
+    border-top:1px solid #22242a;
+    color:#777;
+    font-size:12px;
+}
+
+@media(max-width:700px){
+
+    main{
+        padding:40px 5%;
+    }
+
+    .movie{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .poster{
+        height:380px;
+    }
+
+    .movie-info{
+        text-align:left;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html" class="logo">
+HDMOVIEZ
+</a>
+
+<a href="index.html" class="back">
+← Back
+</a>
+
+</header>
+
+
+<main>
+
+<div class="movie">
+
+<div class="poster">
+🎬
+</div>
+
+
+<div class="movie-info">
+
+<div class="label">
+MOVIE DETAILS
+</div>
+
+<h1>Sample Movie</h1>
+
+<div class="meta">
+2025 • Hindi • Drama<br>
+⭐ Rating: — • Runtime: —
+</div>
+
+<p class="description">
+This is a sample movie page used to demonstrate the HDMOVIEZ
+layout. Replace this information with verified movie details
+before publishing.
+</p>
+
+
+<div class="watch-section">
+
+<h2>Where to Watch</h2>
+
+<p>
+Choose an authorized source to watch this movie.
+</p>
+
+<div class="buttons">
+
+<a href="#"
+class="button"
+onclick="alert('Add verified legal free-watch URL here.');return false;">
+🟢 Watch Free
+</a>
+
+<a href="#"
+class="button"
+onclick="alert('Add official rental or streaming URL here.');return false;">
+📺 Official Platform
+</a>
+
+</div>
+
+<div class="note">
+Only authorized/legal viewing sources should be added.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<section class="similar">
+
+<h2>Similar Movies</h2>
+
+<div class="similar-grid">
+
+<div class="card">
+
+<div class="small-poster">
+🎬
+</div>
+
+<h3>Sample Movie 2</h3>
+
+</div>
+
+
+<div class="card">
+
+<div class="small-poster">
+🎬
+</div>
+
+<h3>Sample Movie 3</h3>
+
+</div>
+
+
+<div class="card">
+
+<div class="small-poster">
+🎬
+</div>
+
+<h3>Sample Movie 4</h3>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<strong>HDMOVIEZ</strong>
+
+<p>
+Har Movie, Ek Jagah.
+</p>
+
+</footer>
+
+</body>
+</html>
