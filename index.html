@@ -180,6 +180,34 @@ section{
         placeholder="🔍 Search movies..."
         autocomplete="off">
 </div>
+
+    <div class="filters">
+
+<button class="filter-btn active" data-filter="all">
+All
+</button>
+
+<button class="filter-btn" data-filter="hindi">
+Hindi
+</button>
+
+<button class="filter-btn" data-filter="english">
+English
+</button>
+
+<button class="filter-btn" data-filter="action">
+Action
+</button>
+
+<button class="filter-btn" data-filter="drama">
+Drama
+</button>
+
+<button class="filter-btn" data-filter="free">
+Free
+</button>
+
+</div>
     
 .movie-grid{
     display:grid;
@@ -362,6 +390,30 @@ footer p{
         font-size:21px;
     }
 }
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.filter-btn{
+    padding:10px 16px;
+    border:1px solid #292b31;
+    border-radius:20px;
+    background:#121317;
+    color:#aaa;
+    cursor:pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#fff;
+    color:#111;
+}
+    
 </style>
 </head>
 
@@ -430,7 +482,10 @@ id="searchInput"
 
 <!-- IRON MAN -->
 
-<div class="movie-card">
+<div class="movie-card"
+data-language="english"
+data-genre="action"
+data-status="paid">
 
 <div class="poster">
 🤖
@@ -460,7 +515,10 @@ VIEW DETAILS
 
 <!-- DHURANDHAR -->
 
-<div class="movie-card">
+<div class="movie-card"
+data-language="hindi"
+data-genre="action"
+data-status="paid">
 
 <div class="poster">
 🎬
@@ -490,7 +548,10 @@ VIEW DETAILS
 
 <!-- DEEWAAR -->
 
-<div class="movie-card">
+<div class="movie-card"
+data-language="hindi"
+data-genre="drama"
+data-status="free">
 
 <div class="poster">
 🎞️
@@ -520,7 +581,10 @@ WATCH OPTIONS
 
 <!-- AVTAAR -->
 
-<div class="movie-card">
+<div class="movie-card"
+data-language="hindi"
+data-genre="drama"
+data-status="paid">
 
 <div class="poster">
 🎬
@@ -550,7 +614,10 @@ VIEW DETAILS
 
 <!-- THE ODYSSEY -->
 
-<div class="movie-card">
+<div class="movie-card"
+data-language="english"
+data-genre="action"
+data-status="theatrical">
 
 <div class="poster">
 🏛️
@@ -734,5 +801,72 @@ searchInput.addEventListener("input", function(){
 });
 
 </script>
+
+<script>
+
+const filterButtons =
+document.querySelectorAll(".filter-btn");
+
+filterButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        filterButtons.forEach(function(btn){
+            btn.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+        const filter =
+            this.dataset.filter;
+
+        movieCards.forEach(function(card){
+
+            const language =
+                card.dataset.language;
+
+            const genre =
+                card.dataset.genre;
+
+            const status =
+                card.dataset.status;
+
+            let show = false;
+
+            if(filter === "all"){
+                show = true;
+            }
+
+            else if(filter === "hindi"){
+                show = language === "hindi";
+            }
+
+            else if(filter === "english"){
+                show = language === "english";
+            }
+
+            else if(filter === "action"){
+                show = genre === "action";
+            }
+
+            else if(filter === "drama"){
+                show = genre === "drama";
+            }
+
+            else if(filter === "free"){
+                show = status === "free";
+            }
+
+            card.style.display =
+                show ? "" : "none";
+
+        });
+
+    });
+
+});
+
+</script>
+    
 </body>
 </html>
