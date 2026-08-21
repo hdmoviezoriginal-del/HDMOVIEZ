@@ -299,7 +299,7 @@ status:"PAID",
 source:"JioHotstar",
 sourceUrl:"https://www.hotstar.com/in",
 description:"Tony Stark, a billionaire industrialist, builds a powered suit of armor and becomes Iron Man.",
-poster:"🤖"
+poster:"Ironman2008.jpg"
 },
 
 movie2:{
@@ -383,9 +383,14 @@ document.getElementById("meta").innerHTML =
 document.getElementById("description").textContent =
 movie.description;
 
-document.getElementById("poster").textContent =
-movie.poster;
+const posterBox = document.getElementById("poster");
 
+if (movie.poster.endsWith(".jpg") || movie.poster.endsWith(".png")) {
+    posterBox.innerHTML =
+        `<img src="${movie.poster}" alt="${movie.title}" style="width:100%;height:100%;object-fit:cover;border-radius:18px;">`;
+} else {
+    posterBox.textContent = movie.poster;
+}
 
 const statusBox =
 document.getElementById("statusBox");
