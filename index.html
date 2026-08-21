@@ -764,6 +764,68 @@ document.getElementById("movieSearch");
 const movieCards =
 document.querySelectorAll(".movie-card");
 
+    const filterButtons =
+document.querySelectorAll(".filter-btn");
+
+filterButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        filterButtons.forEach(function(btn){
+            btn.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+        const filter =
+            this.dataset.filter;
+
+        movieCards.forEach(function(card){
+
+            const language =
+                card.dataset.language;
+
+            const genre =
+                card.dataset.genre;
+
+            const status =
+                card.dataset.status;
+
+            let show = false;
+
+            if(filter === "all"){
+                show = true;
+            }
+
+            else if(filter === "hindi"){
+                show = language === "hindi";
+            }
+
+            else if(filter === "english"){
+                show = language === "english";
+            }
+
+            else if(filter === "action"){
+                show = genre === "action";
+            }
+
+            else if(filter === "drama"){
+                show = genre === "drama";
+            }
+
+            else if(filter === "free"){
+                show = status === "free";
+            }
+
+            card.style.display =
+                show ? "" : "none";
+
+        });
+
+    });
+
+});
+
 searchInput.addEventListener("input", function(){
 
     const search =
