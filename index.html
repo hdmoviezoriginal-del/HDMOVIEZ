@@ -1,197 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>HDMOVIEZ — Har Movie, Ek Jagah.</title>
+<title>HDMOVIEZ — Har Movie, Ek Jagah.</title>
 
-  <meta name="description"
-        content="HDMOVIEZ — Har Movie, Ek Jagah. Discover movies and find legal ways to watch them.">
+<meta name="description"
+content="HDMOVIEZ — Har Movie, Ek Jagah. Discover movies and find legal ways to watch them.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#08090b;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+/* HEADER */
+
+header{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    border-bottom:1px solid #202126;
+    background:#08090b;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#fff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+    background:
+    radial-gradient(circle at center,#22252d 0%,#101116 35%,#08090b 75%);
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.tagline{
+    color:#aaa;
+    letter-spacing:5px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,8vw,78px);
+    line-height:1;
+    margin-bottom:22px;
+}
+
+.hero-description{
+    color:#999;
+    font-size:17px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+/* SEARCH */
+
+.search-box{
+    max-width:650px;
+    margin:auto;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    padding:18px 22px;
+    border-radius:15px;
+    border:1px solid #34363d;
+    background:#15161a;
+    color:white;
+    font-size:16px;
+    outline:none;
+}
+
+.search-box input:focus{
+    border-color:#777;
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1250px;
+    margin:auto;
+    padding:55px 6%;
+}
+
+.section-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:25px;
+}
+
+.section-header h2{
+    font-size:26px;
+}
+
+.section-header span{
+    color:#777;
+    font-size:13px;
+}
+
+/* MOVIES */
+
+.movie-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(170px,1fr));
+    gap:20px;
+}
+
+.movie-card{
+    background:#121317;
+    border:1px solid #24262c;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.25s;
+}
+
+.movie-card:hover{
+    transform:translateY(-5px);
+    border-color:#555;
+}
+
+.poster{
+    height:245px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+    background:
+    linear-gradient(145deg,#292c33,#111216);
+}
+
+.movie-info{
+    padding:15px;
+}
+
+.movie-info h3{
+    font-size:16px;
+    margin-bottom:7px;
+}
+
+.movie-meta{
+    color:#777;
+    font-size:12px;
+}
+
+/* BUTTON */
+
+.watch-button{
+    display:block;
+    margin-top:13px;
+    text-align:center;
+    padding:10px;
+    border-radius:9px;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* CATEGORIES */
+
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    gap:11px;
+}
+
+.category{
+    padding:12px 18px;
+    border-radius:30px;
+    background:#15161a;
+    border:1px solid #292b31;
+    color:#ddd;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.category:hover{
+    background:#22242a;
+    color:#fff;
+}
+
+/* TELEGRAM */
+
+.telegram{
+    text-align:center;
+    border:1px solid #292b31;
+    border-radius:20px;
+    padding:45px 25px;
+    background:#111216;
+}
+
+.telegram h2{
+    margin-bottom:12px;
+}
+
+.telegram p{
+    color:#999;
+    margin-bottom:22px;
+}
+
+.telegram-button{
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:10px;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:30px;
+    padding:50px 20px;
+    text-align:center;
+    border-top:1px solid #202126;
+    color:#777;
+}
+
+footer strong{
+    color:#fff;
+    font-size:21px;
+    letter-spacing:1px;
+}
+
+footer p{
+    margin-top:12px;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+    header{
+        padding:0 5%;
     }
 
-    body {
-      background: #0b0b0d;
-      color: white;
-      font-family: Arial, sans-serif;
+    nav{
+        gap:12px;
     }
 
-    header {
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6%;
-      border-bottom: 1px solid #252529;
+    nav a{
+        font-size:12px;
     }
 
-    .logo {
-      font-size: 23px;
-      font-weight: 900;
-      letter-spacing: 2px;
+    .hero{
+        min-height:470px;
+        padding:60px 18px;
     }
 
-    nav a {
-      color: #aaa;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
+    .hero h1{
+        font-size:45px;
     }
 
-    .hero {
-      text-align: center;
-      padding: 90px 20px 70px;
+    .hero-description{
+        font-size:15px;
     }
 
-    .tagline {
-      color: #999;
-      letter-spacing: 4px;
-      font-size: 12px;
+    section{
+        padding:40px 5%;
     }
 
-    h1 {
-      font-size: clamp(42px, 8vw, 72px);
-      margin: 15px 0;
+    .movie-grid{
+        grid-template-columns:
+        repeat(2,minmax(0,1fr));
+        gap:12px;
     }
 
-    .hero p {
-      color: #aaa;
-      font-size: 17px;
+    .poster{
+        height:220px;
     }
 
-    .search {
-      width: min(620px, 100%);
-      margin: 30px auto 0;
-      padding: 17px 20px;
-      border-radius: 14px;
-      border: 1px solid #333;
-      background: #151519;
-      color: white;
-      font-size: 16px;
+    .section-header h2{
+        font-size:21px;
     }
-
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 35px 6%;
-    }
-
-    h2 {
-      margin-bottom: 22px;
-    }
-
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .category {
-      padding: 12px 18px;
-      border-radius: 30px;
-      background: #151519;
-      border: 1px solid #2d2d32;
-      color: #ddd;
-    }
-
-    footer {
-      margin-top: 50px;
-      padding: 45px 20px;
-      text-align: center;
-      border-top: 1px solid #252529;
-      color: #888;
-    }
-
-    footer strong {
-      color: white;
-      font-size: 20px;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">HDMOVIEZ</div>
+<!-- HEADER -->
 
-  <nav>
-    <a href="#free">Free Movies</a>
-    <a href="#genres">Genres</a>
-  </nav>
+<header>
+
+<a class="logo" href="#">
+HDMOVIEZ
+</a>
+
+<nav>
+<a href="#free">Free</a>
+<a href="#genres">Genres</a>
+<a href="#languages">Languages</a>
+</nav>
+
 </header>
 
-<main>
 
-  <section class="hero">
+<!-- HERO -->
 
-    <div class="tagline">
-      HAR MOVIE, EK JAGAH.
-    </div>
+<div class="hero">
 
-    <h1>Find Your Next Movie.</h1>
+<div class="hero-content">
 
-    <p>
-      Discover movies and find legal ways to watch them.
-    </p>
+<div class="tagline">
+HAR MOVIE, EK JAGAH.
+</div>
 
-    <input
-      class="search"
-      type="search"
-      placeholder="🔎 Search movies..."
-    >
+<h1>
+Find Your Next Movie.
+</h1>
 
-  </section>
+<p class="hero-description">
+Discover movies, explore genres and find legal ways to watch.
+</p>
 
-  <section id="free">
+<div class="search-box">
 
-    <h2>🆓 Free to Watch</h2>
+<input
+type="search"
+placeholder="🔎 Search movies..."
+id="searchInput"
+>
 
-    <p style="color:#888;">
-      Movies available through verified legal sources.
-    </p>
+</div>
 
-  </section>
+</div>
 
-  <section id="genres">
+</div>
 
-    <h2>🎭 Browse by Genre</h2>
 
-    <div class="categories">
+<!-- FREE MOVIES -->
 
-      <div class="category">Action</div>
-      <div class="category">Comedy</div>
-      <div class="category">Drama</div>
-      <div class="category">Horror</div>
-      <div class="category">Romance</div>
-      <div class="category">Family</div>
-      <div class="category">Thriller</div>
+<section id="free">
 
-    </div>
+<div class="section-header">
 
-  </section>
+<h2>🆓 Free to Watch</h2>
 
-</main>
+<span>Legal sources only</span>
+
+</div>
+
+
+<div class="movie-grid" id="movieGrid">
+
+<div class="movie-card">
+
+<div class="poster">
+🎬
+</div>
+
+<div class="movie-info">
+
+<h3>Sample Movie</h3>
+
+<div class="movie-meta">
+Hindi • Drama • 2025
+</div>
+
+<a href="#"
+class="watch-button"
+onclick="alert('Add a verified legal watch link here.');return false;">
+WATCH OPTIONS
+</a>
+
+</div>
+
+</div>
+
+
+<div class="movie-card">
+
+<div class="poster">
+🎬
+</div>
+
+<div class="movie-info">
+
+<h3>Sample Movie 2</h3>
+
+<div class="movie-meta">
+English • Action • 2024
+</div>
+
+<a href="#"
+class="watch-button"
+onclick="alert('Add a verified legal watch link here.');return false;">
+WATCH OPTIONS
+</a>
+
+</div>
+
+</div>
+
+
+<div class="movie-card">
+
+<div class="poster">
+🎬
+</div>
+
+<div class="movie-info">
+
+<h3>Sample Movie 3</h3>
+
+<div class="movie-meta">
+Tamil • Comedy • 2023
+</div>
+
+<a href="#"
+class="watch-button"
+onclick="alert('Add a verified legal watch link here.');return false;">
+WATCH OPTIONS
+</a>
+
+</div>
+
+</div>
+
+
+<div class="movie-card">
+
+<div class="poster">
+🎬
+</div>
+
+<div class="movie-info">
+
+<h3>Sample Movie 4</h3>
+
+<div class="movie-meta">
+Telugu • Family • 2023
+</div>
+
+<a href="#"
+class="watch-button"
+onclick="alert('Add a verified legal watch link here.');return false;">
+WATCH OPTIONS
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GENRES -->
+
+<section id="genres">
+
+<div class="section-header">
+
+<h2>🎭 Browse by Genre</h2>
+
+</div>
+
+<div class="categories">
+
+<div class="category">Action</div>
+<div class="category">Comedy</div>
+<div class="category">Drama</div>
+<div class="category">Horror</div>
+<div class="category">Romance</div>
+<div class="category">Family</div>
+<div class="category">Thriller</div>
+<div class="category">Adventure</div>
+
+</div>
+
+</section>
+
+
+<!-- LANGUAGES -->
+
+<section id="languages">
+
+<div class="section-header">
+
+<h2>🌎 Languages</h2>
+
+</div>
+
+<div class="categories">
+
+<div class="category">Hindi</div>
+<div class="category">English</div>
+<div class="category">Tamil</div>
+<div class="category">Telugu</div>
+<div class="category">Malayalam</div>
+<div class="category">Kannada</div>
+<div class="category">Punjabi</div>
+<div class="category">Bengali</div>
+
+</div>
+
+</section>
+
+
+<!-- TELEGRAM -->
+
+<section>
+
+<div class="telegram">
+
+<h2>📢 HDMOVIEZ Community</h2>
+
+<p>
+Find legal free-watch options, movie updates and viewing guides.
+</p>
+
+<a href="#"
+class="telegram-button"
+onclick="alert('Telegram link will be added after the community is created.');return false;">
+JOIN TELEGRAM
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-  <strong>HDMOVIEZ</strong>
+<strong>HDMOVIEZ</strong>
 
-  <p style="margin-top:10px;">
-    Har Movie, Ek Jagah.
-  </p>
+<p>
+Har Movie, Ek Jagah.
+</p>
 
-  <p style="margin-top:18px;font-size:12px;">
-    HDMOVIEZ does not host movie files.
-    Watch links should point only to authorized sources.
-  </p>
+<p>
+HDMOVIEZ does not host movie files.
+Watch links should point only to authorized/legal sources.
+</p>
 
 </footer>
+
+
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+const cards =
+document.querySelectorAll(".movie-card");
+
+searchInput.addEventListener("input",function(){
+
+const query =
+this.value.toLowerCase();
+
+cards.forEach(function(card){
+
+const text =
+card.innerText.toLowerCase();
+
+card.style.display =
+text.includes(query)
+? ""
+: "none";
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
