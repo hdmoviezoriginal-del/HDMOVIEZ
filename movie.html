@@ -4,189 +4,184 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Movie — HDMOVIEZ</title>
+<title>HDMOVIEZ — Movie</title>
 
 <style>
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-background:#08090b;
-color:#fff;
-font-family:Arial,Helvetica,sans-serif;
+    background:#08090b;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 header{
-height:72px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 6%;
-border-bottom:1px solid #22242a;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    border-bottom:1px solid #22242a;
 }
 
 .logo{
-color:#fff;
-text-decoration:none;
-font-weight:900;
-font-size:22px;
-letter-spacing:2px;
+    color:#fff;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:2px;
 }
 
 .back{
-color:#aaa;
-text-decoration:none;
-font-size:14px;
+    color:#aaa;
+    text-decoration:none;
 }
 
 main{
-max-width:1100px;
-margin:auto;
-padding:55px 6%;
+    max-width:1100px;
+    margin:auto;
+    padding:55px 6%;
 }
 
 .movie{
-display:grid;
-grid-template-columns:280px 1fr;
-gap:40px;
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:40px;
 }
 
 .poster{
-height:410px;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-background:linear-gradient(145deg,#292c33,#111216);
-border:1px solid #292b31;
+    height:410px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px;
+    background:linear-gradient(145deg,#292c33,#111216);
+    border:1px solid #292b31;
 }
 
 .label{
-color:#888;
-font-size:12px;
-letter-spacing:2px;
-margin-bottom:12px;
+    color:#888;
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:12px;
 }
 
 h1{
-font-size:clamp(35px,6vw,60px);
-margin-bottom:15px;
+    font-size:clamp(35px,6vw,60px);
+    margin-bottom:15px;
 }
 
 .meta{
-color:#999;
-line-height:1.8;
-margin-bottom:25px;
+    color:#999;
+    line-height:1.8;
+    margin-bottom:25px;
 }
 
 .description{
-color:#aaa;
-line-height:1.7;
-max-width:650px;
+    color:#aaa;
+    line-height:1.7;
+    max-width:650px;
 }
 
 .watch-section{
-margin-top:35px;
-padding:25px;
-border-radius:16px;
-background:#121317;
-border:1px solid #292b31;
+    margin-top:35px;
+    padding:25px;
+    border-radius:16px;
+    background:#121317;
+    border:1px solid #292b31;
 }
 
 .watch-section h2{
-margin-bottom:10px;
-}
-
-.watch-section p{
-color:#888;
-font-size:14px;
-margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .buttons{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:18px;
 }
 
 .button{
-display:inline-block;
-padding:13px 20px;
-border-radius:10px;
-background:#fff;
-color:#111;
-text-decoration:none;
-font-weight:bold;
-font-size:13px;
+    display:inline-block;
+    padding:13px 20px;
+    border-radius:10px;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:13px;
 }
 
 .note{
-margin-top:15px;
-color:#666;
-font-size:11px;
+    margin-top:18px;
+    color:#666;
+    font-size:11px;
+    line-height:1.5;
 }
 
 .similar{
-margin-top:60px;
+    margin-top:60px;
 }
 
 .similar-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
-gap:15px;
-margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:15px;
+    margin-top:20px;
 }
 
 .card{
-padding:20px;
-background:#121317;
-border:1px solid #25272c;
-border-radius:14px;
-text-align:center;
+    padding:20px;
+    background:#121317;
+    border:1px solid #25272c;
+    border-radius:14px;
+    text-align:center;
 }
 
 .small-poster{
-height:170px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:35px;
-background:#202228;
-border-radius:10px;
-margin-bottom:12px;
+    height:170px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+    background:#202228;
+    border-radius:10px;
+    margin-bottom:12px;
 }
 
 .card h3{
-font-size:14px;
+    font-size:14px;
 }
 
 footer{
-margin-top:50px;
-padding:40px 20px;
-text-align:center;
-border-top:1px solid #22242a;
-color:#777;
-font-size:12px;
+    margin-top:50px;
+    padding:40px 20px;
+    text-align:center;
+    border-top:1px solid #22242a;
+    color:#777;
+    font-size:12px;
 }
 
 @media(max-width:700px){
 
-main{
-padding:40px 5%;
-}
+    main{
+        padding:40px 5%;
+    }
 
-.movie{
-grid-template-columns:1fr;
-gap:25px;
-}
+    .movie{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
 
-.poster{
-height:380px;
-}
+    .poster{
+        height:380px;
+    }
 }
 </style>
 </head>
@@ -213,6 +208,7 @@ HDMOVIEZ
 <div class="poster" id="poster">
 🎬
 </div>
+
 
 <div>
 
@@ -290,111 +286,86 @@ Har Movie, Ek Jagah.
 
 <script>
 
-/*
-=====================================
-HDMOVIEZ MOVIE DATABASE
-=====================================
-Add new movies inside this object.
-*/
-
 const movies = {
 
-movie1: {
-title: "Iron Man",
-year: "2008",
-language: "English",
-genre: "Action • Sci-Fi",
-rating: "7.9",
-runtime: "126 min",
-status: "PAID",
-source: "JioHotstar",
-sourceUrl: "https://www.hotstar.com/in",
-description:
-"Tony Stark, a billionaire industrialist, builds a powered suit of armor and becomes Iron Man.",
-poster: "🤖"
+movie1:{
+title:"Iron Man",
+year:"2008",
+language:"English",
+genre:"Action • Sci-Fi",
+rating:"7.9",
+runtime:"126 min",
+status:"PAID",
+source:"JioHotstar",
+sourceUrl:"https://www.hotstar.com/in",
+description:"Tony Stark, a billionaire industrialist, builds a powered suit of armor and becomes Iron Man.",
+poster:"🤖"
 },
 
-movie2: {
-title: "Dhurandhar",
-year: "2025",
-language: "Hindi",
-genre: "Action • Thriller",
-rating: "—",
-runtime: "—",
-status: "PAID",
-source: "JioHotstar",
-sourceUrl: "https://www.hotstar.com/in",
-description:
-"Dhurandhar is an Indian action thriller directed by Aditya Dhar.",
-poster: "🎬"
+movie2:{
+title:"Dhurandhar",
+year:"2025",
+language:"Hindi",
+genre:"Action • Thriller",
+rating:"—",
+runtime:"—",
+status:"PAID",
+source:"JioHotstar",
+sourceUrl:"https://www.hotstar.com/in",
+description:"Dhurandhar is an Indian action thriller.",
+poster:"🎬"
 },
 
-movie3: {
-title: "Deewaar",
-year: "1975",
-language: "Hindi",
-genre: "Action • Crime • Drama",
-rating: "—",
-runtime: "168 min",
-status: "FREE",
-source: "Official Shemaroo YouTube",
-sourceUrl: "https://www.youtube.com/watch?v=xuOQqWU2UQA",
-description:
-"Yash Chopra's classic drama starring Amitabh Bachchan and Shashi Kapoor.",
-poster: "🎞️"
+movie3:{
+title:"Deewaar",
+year:"1975",
+language:"Hindi",
+genre:"Action • Crime • Drama",
+rating:"—",
+runtime:"168 min",
+status:"FREE",
+source:"Official Shemaroo YouTube",
+sourceUrl:"https://www.youtube.com/watch?v=xuOQqWU2UQA",
+description:"A classic Hindi crime drama starring Amitabh Bachchan and Shashi Kapoor.",
+poster:"🎞️"
 },
 
-movie4: {
-title: "Avtaar",
-year: "1983",
-language: "Hindi",
-genre: "Drama",
-rating: "—",
-runtime: "150 min",
-status: "PAID",
-source: "ShemarooMe",
-sourceUrl: "https://www.shemaroome.com/bollywood/movies/avtaar",
-description:
-"Avtaar follows a hardworking father who rebuilds his life after being abandoned by his sons.",
-poster: "🎬"
+movie4:{
+title:"Avtaar",
+year:"1983",
+language:"Hindi",
+genre:"Drama",
+rating:"—",
+runtime:"150 min",
+status:"PAID",
+source:"ShemarooMe",
+sourceUrl:"https://www.shemaroome.com/bollywood/movies/avtaar",
+description:"A hardworking father faces difficult circumstances and struggles to rebuild his life.",
+poster:"🎬"
 },
 
-movie5: {
-title: "The Odyssey",
-year: "2026",
-language: "English",
-genre: "Epic • Adventure • Drama",
-rating: "—",
-runtime: "—",
-status: "THEATRICAL",
-source: "",
-sourceUrl: "",
-description:
-"Christopher Nolan's epic adaptation of Homer's The Odyssey.",
-poster: "🏛️"
+movie5:{
+title:"The Odyssey",
+year:"2026",
+language:"English",
+genre:"Epic • Adventure • Drama",
+rating:"—",
+runtime:"—",
+status:"THEATRICAL",
+source:"",
+sourceUrl:"",
+description:"Christopher Nolan's epic adaptation of Homer's The Odyssey.",
+poster:"🏛️"
 }
 
 };
 
-
-/*
-=====================================
-GET MOVIE ID FROM URL
-=====================================
-*/
 
 const params =
 new URLSearchParams(window.location.search);
 
 const id =
 params.get("id") || "movie1";
-
-
-/*
-=====================================
-LOAD MOVIE
-=====================================
-*/
 
 const movie =
 movies[id];
@@ -416,23 +387,20 @@ document.getElementById("poster").textContent =
 movie.poster;
 
 
-/*
-LEGAL WATCH LINKS
-*/
-
 const statusBox =
 document.getElementById("statusBox");
 
 const watchButtons =
 document.getElementById("watchButtons");
 
+
 if(movie.status === "FREE"){
 
 statusBox.innerHTML =
-`<div style="color:#7cff9b;font-weight:bold;margin-bottom:18px;">
+`<div style="color:#7cff9b;font-weight:bold;">
 🟢 FREE TO WATCH
 </div>
-<p style="color:#888;margin-bottom:18px;">
+<p style="color:#888;margin-top:10px;">
 Source: ${movie.source}
 </p>`;
 
@@ -446,13 +414,14 @@ WATCH NOW
 
 }
 
+
 else if(movie.status === "PAID"){
 
 statusBox.innerHTML =
-`<div style="color:#ffd166;font-weight:bold;margin-bottom:18px;">
+`<div style="color:#ffd166;font-weight:bold;">
 🟡 PAID / SUBSCRIPTION
 </div>
-<p style="color:#888;margin-bottom:18px;">
+<p style="color:#888;margin-top:10px;">
 Source: ${movie.source}
 </p>`;
 
@@ -466,17 +435,31 @@ VIEW OFFICIAL SOURCE
 
 }
 
+
 else if(movie.status === "THEATRICAL"){
 
 statusBox.innerHTML =
-`<div style="color:#9ecbff;font-weight:bold;margin-bottom:18px;">
+`<div style="color:#9ecbff;font-weight:bold;">
 🎬 THEATRICAL
 </div>
-<p style="color:#888;">
+<p style="color:#888;margin-top:10px;">
 Official streaming information will be added when available.
 </p>`;
 
 watchButtons.innerHTML = "";
+
+}
+
+}
+
+
+else{
+
+document.getElementById("title").textContent =
+"Movie Not Found";
+
+document.getElementById("description").textContent =
+"This movie could not be found.";
 
 }
 
