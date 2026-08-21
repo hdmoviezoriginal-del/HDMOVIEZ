@@ -727,103 +727,89 @@ Watch links should point only to authorized/legal sources.
 
 </footer>
 
-<script>
 
-const movieCards =
-document.querySelectorAll(".movie-card");
+ <script>
 
-const searchInput =
-document.getElementById("movieSearch");
-
-const filterButtons =
-document.querySelectorAll(".filter-btn");
+const searchInput = document.getElementById("searchInput");
+const movieCards = document.querySelectorAll(".movie-card");
+const filterButtons = document.querySelectorAll(".filter-btn");
 
 let activeFilter = "all";
 
-function updateMovies(){
+function updateMovies() {
 
-    const search =
-        searchInput.value.toLowerCase().trim();
+    const search = searchInput.value
+        .toLowerCase()
+        .trim();
 
-    movieCards.forEach(function(card){
+    movieCards.forEach(function(card) {
 
-        const name =
-            card.querySelector("h3")
-            .textContent
-            .toLowerCase();
+        const titleElement = card.querySelector("h3");
 
-        const language =
-            card.dataset.language;
+        const title = titleElement
+            ? titleElement.textContent.toLowerCase()
+            : "";
 
-        const genre =
-            card.dataset.genre;
-
-        const status =
-            card.dataset.status;
+        const language = card.dataset.language || "";
+        const genre = card.dataset.genre || "";
+        const status = card.dataset.status || "";
 
         let filterMatch = true;
 
-        if(activeFilter === "hindi"){
+        if (activeFilter === "hindi") {
             filterMatch = language === "hindi";
         }
 
-        else if(activeFilter === "english"){
+        else if (activeFilter === "english") {
             filterMatch = language === "english";
         }
 
-        else if(activeFilter === "action"){
+        else if (activeFilter === "action") {
             filterMatch = genre === "action";
         }
 
-        else if(activeFilter === "drama"){
+        else if (activeFilter === "drama") {
             filterMatch = genre === "drama";
         }
 
-        else if(activeFilter === "free"){
+        else if (activeFilter === "free") {
             filterMatch = status === "free";
         }
 
-        const searchMatch =
-            name.includes(search);
+        const searchMatch = title.includes(search);
 
         card.style.display =
             filterMatch && searchMatch
             ? ""
             : "none";
-
     });
-
 }
 
 
-filterButtons.forEach(function(button){
+searchInput.addEventListener("input", updateMovies);
 
-    button.addEventListener("click", function(){
 
-        filterButtons.forEach(function(btn){
+filterButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        filterButtons.forEach(function(btn) {
             btn.classList.remove("active");
         });
 
         this.classList.add("active");
 
-        activeFilter =
-            this.dataset.filter;
+        activeFilter = this.dataset.filter;
 
         updateMovies();
-
     });
 
 });
 
 
-searchInput.addEventListener(
-    "input",
-    updateMovies
-);
+updateMovies();
 
-</script>
-
-            
+ </script>         
 
 
     
