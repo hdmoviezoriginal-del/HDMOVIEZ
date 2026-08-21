@@ -233,34 +233,13 @@ Loading...
 
 <h2>Where to Watch</h2>
 
-<p>
-Choose an authorized source to watch this movie.
-</p>
+<div id="statusBox"></div>
 
-<div class="buttons">
-
-<a
-id="freeLink"
-href="#"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-🟢 Watch Free
-</a>
-
-<a
-id="officialLink"
-href="#"
-class="button"
-target="_blank"
-rel="noopener noreferrer">
-📺 Official Platform
-</a>
-
-</div>
+<div class="buttons" id="watchButtons"></div>
 
 <div class="note">
-Only verified authorized/legal sources should be added.
+HDMOVIEZ links only to authorized viewing sources.
+Availability may change by region and time.
 </div>
 
 </div>
@@ -321,59 +300,78 @@ Add new movies inside this object.
 const movies = {
 
 movie1: {
-title: "Sample Movie",
-year: "2025",
-language: "Hindi",
-genre: "Drama",
-rating: "—",
-runtime: "—",
+title: "Iron Man",
+year: "2008",
+language: "English",
+genre: "Action • Sci-Fi",
+rating: "7.9",
+runtime: "126 min",
+status: "PAID",
+source: "JioHotstar",
+sourceUrl: "https://www.hotstar.com/in",
 description:
-"This is a sample movie entry for the HDMOVIEZ website.",
-poster: "🎬",
-free: "",
-official: ""
+"Tony Stark, a billionaire industrialist, builds a powered suit of armor and becomes Iron Man.",
+poster: "🤖"
 },
 
 movie2: {
-title: "Sample Movie 2",
-year: "2024",
-language: "English",
-genre: "Action",
+title: "Dhurandhar",
+year: "2025",
+language: "Hindi",
+genre: "Action • Thriller",
 rating: "—",
 runtime: "—",
+status: "PAID",
+source: "JioHotstar",
+sourceUrl: "https://www.hotstar.com/in",
 description:
-"This is another sample movie entry.",
-poster: "🎬",
-free: "",
-official: ""
+"Dhurandhar is an Indian action thriller directed by Aditya Dhar.",
+poster: "🎬"
 },
 
 movie3: {
-title: "Sample Movie 3",
-year: "2023",
-language: "Tamil",
-genre: "Comedy",
+title: "Deewaar",
+year: "1975",
+language: "Hindi",
+genre: "Action • Crime • Drama",
 rating: "—",
-runtime: "—",
+runtime: "168 min",
+status: "FREE",
+source: "Official Shemaroo YouTube",
+sourceUrl: "https://www.youtube.com/watch?v=xuOQqWU2UQA",
 description:
-"This is a sample movie entry.",
-poster: "🎬",
-free: "",
-official: ""
+"Yash Chopra's classic drama starring Amitabh Bachchan and Shashi Kapoor.",
+poster: "🎞️"
 },
 
 movie4: {
-title: "Sample Movie 4",
-year: "2023",
-language: "Telugu",
-genre: "Family",
+title: "Avtaar",
+year: "1983",
+language: "Hindi",
+genre: "Drama",
+rating: "—",
+runtime: "150 min",
+status: "PAID",
+source: "ShemarooMe",
+sourceUrl: "https://www.shemaroome.com/bollywood/movies/avtaar",
+description:
+"Avtaar follows a hardworking father who rebuilds his life after being abandoned by his sons.",
+poster: "🎬"
+},
+
+movie5: {
+title: "The Odyssey",
+year: "2026",
+language: "English",
+genre: "Epic • Adventure • Drama",
 rating: "—",
 runtime: "—",
+status: "THEATRICAL",
+source: "",
+sourceUrl: "",
 description:
-"This is a sample movie entry.",
-poster: "🎬",
-free: "",
-official: ""
+"Christopher Nolan's epic adaptation of Homer's The Odyssey.",
+poster: "🏛️"
 }
 
 };
@@ -422,38 +420,63 @@ movie.poster;
 LEGAL WATCH LINKS
 */
 
-if(movie.free){
+const statusBox =
+document.getElementById("statusBox");
 
-document.getElementById("freeLink").href =
-movie.free;
+const watchButtons =
+document.getElementById("watchButtons");
 
-}else{
+if(movie.status === "FREE"){
 
-document.getElementById("freeLink").style.display =
-"none";
+statusBox.innerHTML =
+`<div style="color:#7cff9b;font-weight:bold;margin-bottom:18px;">
+🟢 FREE TO WATCH
+</div>
+<p style="color:#888;margin-bottom:18px;">
+Source: ${movie.source}
+</p>`;
+
+watchButtons.innerHTML =
+`<a href="${movie.sourceUrl}"
+class="button"
+target="_blank"
+rel="noopener noreferrer">
+WATCH NOW
+</a>`;
 
 }
 
+else if(movie.status === "PAID"){
 
-if(movie.official){
+statusBox.innerHTML =
+`<div style="color:#ffd166;font-weight:bold;margin-bottom:18px;">
+🟡 PAID / SUBSCRIPTION
+</div>
+<p style="color:#888;margin-bottom:18px;">
+Source: ${movie.source}
+</p>`;
 
-document.getElementById("officialLink").href =
-movie.official;
-
-}else{
-
-document.getElementById("officialLink").style.display =
-"none";
+watchButtons.innerHTML =
+`<a href="${movie.sourceUrl}"
+class="button"
+target="_blank"
+rel="noopener noreferrer">
+VIEW OFFICIAL SOURCE
+</a>`;
 
 }
 
-}else{
+else if(movie.status === "THEATRICAL"){
 
-document.getElementById("title").textContent =
-"Movie Not Found";
+statusBox.innerHTML =
+`<div style="color:#9ecbff;font-weight:bold;margin-bottom:18px;">
+🎬 THEATRICAL
+</div>
+<p style="color:#888;">
+Official streaming information will be added when available.
+</p>`;
 
-document.getElementById("description").textContent =
-"Sorry, this movie could not be found.";
+watchButtons.innerHTML = "";
 
 }
 
