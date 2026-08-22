@@ -12,6 +12,7 @@ content="width=device-width, initial-scale=1.0">
 
 <meta
 name="description"
+id="pageDescription"
 content="Legal movie viewing information and guides on HDMOVIEZ.">
 
 <style>
@@ -34,7 +35,9 @@ body{
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
     height:72px;
@@ -72,7 +75,9 @@ header{
 }
 
 
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 main{
     max-width:800px;
@@ -83,7 +88,9 @@ main{
 }
 
 
-/* CARD */
+/* =========================
+   CARD
+========================= */
 
 .guide-card{
     background:#111216;
@@ -98,7 +105,9 @@ main{
 }
 
 
-/* LABEL */
+/* =========================
+   LABEL
+========================= */
 
 .label{
     color:#888;
@@ -111,7 +120,9 @@ main{
 }
 
 
-/* TITLE */
+/* =========================
+   TITLE
+========================= */
 
 h1{
     font-size:
@@ -123,7 +134,9 @@ h1{
 }
 
 
-/* INTRO */
+/* =========================
+   INTRO
+========================= */
 
 .intro{
     color:#999;
@@ -136,7 +149,9 @@ h1{
 }
 
 
-/* COUNTDOWN */
+/* =========================
+   COUNTDOWN
+========================= */
 
 .countdown-box{
     margin:30px auto;
@@ -157,11 +172,14 @@ h1{
 
 #countdown{
     font-size:52px;
+
     font-weight:bold;
 }
 
 
-/* WAIT */
+/* =========================
+   WAIT TEXT
+========================= */
 
 .wait-text{
     color:#777;
@@ -174,7 +192,9 @@ h1{
 }
 
 
-/* RESULT */
+/* =========================
+   RESULT
+========================= */
 
 .result{
     display:none;
@@ -192,7 +212,7 @@ h1{
     margin-bottom:15px;
 }
 
-.result p{
+.result > p{
     color:#aaa;
 
     line-height:1.8;
@@ -203,7 +223,9 @@ h1{
 }
 
 
-/* USER GUIDE */
+/* =========================
+   CUSTOM GUIDE
+========================= */
 
 .custom-guide{
     margin-top:25px;
@@ -234,7 +256,9 @@ h1{
 }
 
 
-/* TELEGRAM */
+/* =========================
+   TELEGRAM
+========================= */
 
 .telegram-box{
     margin-top:25px;
@@ -254,6 +278,8 @@ h1{
 
 .telegram-box p{
     color:#999;
+
+    line-height:1.7;
 
     margin-bottom:18px;
 }
@@ -276,8 +302,14 @@ h1{
     font-size:13px;
 }
 
+.telegram-button:hover{
+    opacity:.9;
+}
 
-/* LEGAL NOTE */
+
+/* =========================
+   LEGAL NOTE
+========================= */
 
 .legal-note{
     margin-top:25px;
@@ -290,7 +322,9 @@ h1{
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     margin-top:30px;
@@ -315,7 +349,9 @@ footer strong{
 }
 
 
-/* TABLET */
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:700px){
 
@@ -339,7 +375,9 @@ footer strong{
 }
 
 
-/* PHONE */
+/* =========================
+   PHONE
+========================= */
 
 @media(max-width:450px){
 
@@ -385,7 +423,6 @@ class="back">
 
 <main>
 
-
 <div class="guide-card">
 
 
@@ -399,7 +436,8 @@ Loading...
 </h1>
 
 
-<p class="intro">
+<p class="intro"
+id="introText">
 
 We're preparing the viewing information
 for this movie.
@@ -422,8 +460,8 @@ Please wait a few seconds.
 
 <p class="wait-text">
 
-Your guide will appear when the countdown
-finishes.
+Your legal viewing guide will appear
+when the countdown finishes.
 
 </p>
 
@@ -440,11 +478,13 @@ How Can You Watch It?
 </h2>
 
 
+<!-- AUTOMATIC GUIDE -->
+
 <p id="guideText">
 </p>
 
 
-<!-- YOUR MOVIE-SPECIFIC MESSAGE -->
+<!-- USER'S CUSTOM GUIDE -->
 
 <div
 class="custom-guide"
@@ -462,13 +502,12 @@ id="customGuide">
 
 <!-- TELEGRAM -->
 
-<div class="telegram-box">
-
+<div
+class="telegram-box">
 
 <h3>
 📢 HDMOVIEZ Community
 </h3>
-
 
 <p id="telegramIntro">
 </p>
@@ -477,16 +516,11 @@ id="customGuide">
 <a
 href="#"
 class="telegram-button"
-id="telegramButton"
-onclick="
-alert('Telegram link will be added here.');
-return false;
-">
+id="telegramButton">
 
 JOIN TELEGRAM
 
 </a>
-
 
 </div>
 
@@ -510,7 +544,6 @@ Always use authorized sources.
 
 
 </div>
-
 
 </main>
 
@@ -568,6 +601,11 @@ document.getElementById(
     "movieTitle"
 );
 
+const introText =
+document.getElementById(
+    "introText"
+);
+
 const countdown =
 document.getElementById(
     "countdown"
@@ -598,15 +636,50 @@ document.getElementById(
     "telegramIntro"
 );
 
+const telegramButton =
+document.getElementById(
+    "telegramButton"
+);
+
+const pageDescription =
+document.getElementById(
+    "pageDescription"
+);
+
 
 /* =========================
-   SHOW MOVIE
+   MOVIE FOUND
 ========================= */
 
 if(movie){
 
+    /* =====================
+       TITLE
+    ===================== */
+
     movieTitle.textContent =
     movie.title;
+
+
+    document.title =
+    `HDMOVIEZ — ${movie.title} Legal Viewing Guide`;
+
+
+    pageDescription.setAttribute(
+        "content",
+        `Legal viewing guide for ${movie.title}. Learn about available legal viewing options and release information.`
+    );
+
+
+    /* =====================
+       INTRO
+    ===================== */
+
+    introText.textContent =
+    `We're preparing the legal viewing guide
+    for ${movie.title}.
+
+    Please wait a few seconds.`;
 
 
     /* =====================
@@ -616,10 +689,10 @@ if(movie){
     if(movie.status === "FREE"){
 
         guideText.textContent =
-        `This movie currently has a listed
-        legal viewing option. You can use
-        the official source shown on the
-        HDMOVIEZ movie page.`;
+        `This movie has a listed legal viewing
+        option. After the countdown, check the
+        official viewing information and use the
+        authorized source shown on HDMOVIEZ.`;
 
     }
 
@@ -629,6 +702,7 @@ if(movie){
         guideText.textContent =
         `This movie may require a subscription
         or purchase depending on your region.
+
         Check the official platform listed on
         the movie page for current availability.`;
 
@@ -639,9 +713,11 @@ if(movie){
 
         guideText.textContent =
         `This movie is currently listed as
-        theatrical. For legal viewing, check
-        local theatres and wait for an official
-        streaming release.`;
+        theatrical.
+
+        For legal viewing, check local theatres
+        and wait for an official streaming or
+        digital release.`;
 
     }
 
@@ -649,8 +725,9 @@ if(movie){
     else{
 
         guideText.textContent =
-        `Check the movie's official sources
-        for current legal viewing options.`;
+        `Check the official sources for the
+        current legal viewing options for this
+        movie.`;
 
     }
 
@@ -678,7 +755,7 @@ if(movie){
 
 
     /* =====================
-       TELEGRAM MESSAGE
+       TELEGRAM INTRO
     ===================== */
 
     if(
@@ -694,15 +771,75 @@ if(movie){
     else{
 
         telegramIntro.textContent =
-        "Movie updates, legal viewing information and official release updates will be shared through our community.";
+        `Movie updates, legal viewing information
+        and official release updates will be
+        shared through our community.`;
 
     }
+
+
+    /* =====================
+       TELEGRAM LINK
+    ===================== */
+
+    /*
+       IMPORTANT:
+
+       Jab tumhara official Telegram
+       channel/group ready ho:
+
+       Neeche wali line mein "#" ko
+       apne Telegram URL se replace karna.
+
+       Example:
+
+       https://t.me/YourChannel
+    */
+
+    telegramButton.href =
+    "#";
 
 }
 
 
 /* =========================
-   COUNTDOWN
+   MOVIE NOT FOUND
+========================= */
+
+else{
+
+    document.title =
+    "HDMOVIEZ — Movie Not Found";
+
+
+    movieTitle.textContent =
+    "Movie Not Found";
+
+
+    introText.textContent =
+    "This movie could not be found.";
+
+
+    guideText.textContent =
+    "Please return to the movie page and select a valid movie.";
+
+
+    customGuide.style.display =
+    "none";
+
+
+    telegramIntro.textContent =
+    "Return to HDMOVIEZ and select a valid movie.";
+
+
+    telegramButton.style.display =
+    "none";
+
+}
+
+
+/* =========================
+   10 SECOND COUNTDOWN
 ========================= */
 
 let seconds = 10;
@@ -712,6 +849,7 @@ const timer =
 setInterval(function(){
 
     seconds--;
+
 
     countdown.textContent =
     seconds;
@@ -729,25 +867,25 @@ setInterval(function(){
         result.style.display =
         "block";
 
+
+        /*
+           Scroll slightly so the
+           newly revealed guide is visible.
+        */
+
+        setTimeout(function(){
+
+            result.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        },150);
+
     }
 
 },1000);
 
-
-/* =========================
-   TELEGRAM LINK
-========================= */
-
-/*
-   Jab tumhara official Telegram
-   channel/group ready ho jayega,
-   sirf neeche href change karna hai.
-
-   Example:
-
-   https://t.me/YourChannel
-
-*/
 
 </script>
 
