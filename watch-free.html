@@ -5,15 +5,14 @@
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
+<meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>HDMOVIEZ — Legal Viewing Guide</title>
 
 <meta
 name="description"
-content="Find legal ways to watch movies and get useful viewing information on HDMOVIEZ.">
+content="Legal movie viewing information and guides on HDMOVIEZ.">
 
 <style>
 
@@ -124,7 +123,7 @@ h1{
 }
 
 
-/* DESCRIPTION */
+/* INTRO */
 
 .intro{
     color:#999;
@@ -158,12 +157,11 @@ h1{
 
 #countdown{
     font-size:52px;
-
     font-weight:bold;
 }
 
 
-/* WAIT TEXT */
+/* WAIT */
 
 .wait-text{
     color:#777;
@@ -191,7 +189,7 @@ h1{
 .result h2{
     font-size:24px;
 
-    margin-bottom:12px;
+    margin-bottom:15px;
 }
 
 .result p{
@@ -202,6 +200,37 @@ h1{
     font-size:14px;
 
     margin-bottom:20px;
+}
+
+
+/* USER GUIDE */
+
+.custom-guide{
+    margin-top:25px;
+
+    padding:22px;
+
+    border-radius:14px;
+
+    background:#15161a;
+
+    border:1px solid #292b31;
+
+    text-align:left;
+}
+
+.custom-guide h3{
+    font-size:17px;
+
+    margin-bottom:10px;
+}
+
+.custom-guide p{
+    margin:0;
+
+    color:#aaa;
+
+    line-height:1.8;
 }
 
 
@@ -286,12 +315,12 @@ footer strong{
 }
 
 
-/* MOBILE */
+/* TABLET */
 
-@media(max-width:600px){
+@media(max-width:700px){
 
     main{
-        padding:45px 5%;
+        padding:50px 5%;
     }
 
     .guide-card{
@@ -299,12 +328,27 @@ footer strong{
     }
 
     .countdown-box{
-        width:130px;
-        height:130px;
+        width:135px;
+        height:135px;
     }
 
     #countdown{
         font-size:45px;
+    }
+
+}
+
+
+/* PHONE */
+
+@media(max-width:450px){
+
+    .guide-card{
+        padding:25px 16px;
+    }
+
+    h1{
+        font-size:38px;
     }
 
 }
@@ -397,23 +441,36 @@ How Can You Watch It?
 
 
 <p id="guideText">
-
 </p>
 
 
-<div class="telegram-box">
+<!-- YOUR MOVIE-SPECIFIC MESSAGE -->
+
+<div
+class="custom-guide"
+id="customGuide">
 
 <h3>
-📢 Want More Movie Updates?
+📌 HDMOVIEZ Guide
+</h3>
+
+<p id="customGuideText">
+</p>
+
+</div>
+
+
+<!-- TELEGRAM -->
+
+<div class="telegram-box">
+
+
+<h3>
+📢 HDMOVIEZ Community
 </h3>
 
 
-<p>
-
-We'll share movie information,
-legal viewing guides and updates
-through our community.
-
+<p id="telegramIntro">
 </p>
 
 
@@ -430,8 +487,11 @@ JOIN TELEGRAM
 
 </a>
 
+
 </div>
 
+
+<!-- LEGAL NOTE -->
 
 <div class="legal-note">
 
@@ -477,7 +537,7 @@ Har Movie, Ek Jagah.
 
 
 /* =========================
-   GET MOVIE
+   GET MOVIE ID
 ========================= */
 
 const params =
@@ -488,6 +548,10 @@ new URLSearchParams(
 const id =
 params.get("id");
 
+
+/* =========================
+   FIND MOVIE
+========================= */
 
 const movie =
 movies.find(
@@ -519,9 +583,24 @@ document.getElementById(
     "guideText"
 );
 
+const customGuide =
+document.getElementById(
+    "customGuide"
+);
+
+const customGuideText =
+document.getElementById(
+    "customGuideText"
+);
+
+const telegramIntro =
+document.getElementById(
+    "telegramIntro"
+);
+
 
 /* =========================
-   MOVIE TITLE
+   SHOW MOVIE
 ========================= */
 
 if(movie){
@@ -530,11 +609,9 @@ if(movie){
     movie.title;
 
 
-    /*
-       We deliberately do not
-       show an unauthorized download
-       or streaming link here.
-    */
+    /* =====================
+       AUTOMATIC GUIDE
+    ===================== */
 
     if(movie.status === "FREE"){
 
@@ -546,6 +623,7 @@ if(movie){
 
     }
 
+
     else if(movie.status === "PAID"){
 
         guideText.textContent =
@@ -556,21 +634,67 @@ if(movie){
 
     }
 
+
     else if(movie.status === "THEATRICAL"){
 
         guideText.textContent =
         `This movie is currently listed as
-        theatrical. If you want to watch it
-        legally, check local theatres and wait
-        for an official streaming release.`;
+        theatrical. For legal viewing, check
+        local theatres and wait for an official
+        streaming release.`;
 
     }
+
 
     else{
 
         guideText.textContent =
         `Check the movie's official sources
         for current legal viewing options.`;
+
+    }
+
+
+    /* =====================
+       YOUR CUSTOM GUIDE
+    ===================== */
+
+    if(
+        movie.watchFreeGuide &&
+        movie.watchFreeGuide.trim() !== ""
+    ){
+
+        customGuideText.textContent =
+        movie.watchFreeGuide;
+
+    }
+
+    else{
+
+        customGuide.style.display =
+        "none";
+
+    }
+
+
+    /* =====================
+       TELEGRAM MESSAGE
+    ===================== */
+
+    if(
+        movie.telegramIntro &&
+        movie.telegramIntro.trim() !== ""
+    ){
+
+        telegramIntro.textContent =
+        movie.telegramIntro;
+
+    }
+
+    else{
+
+        telegramIntro.textContent =
+        "Movie updates, legal viewing information and official release updates will be shared through our community.";
 
     }
 
@@ -608,6 +732,22 @@ setInterval(function(){
     }
 
 },1000);
+
+
+/* =========================
+   TELEGRAM LINK
+========================= */
+
+/*
+   Jab tumhara official Telegram
+   channel/group ready ho jayega,
+   sirf neeche href change karna hai.
+
+   Example:
+
+   https://t.me/YourChannel
+
+*/
 
 </script>
 
