@@ -1328,45 +1328,62 @@ if(movie){
 
     }
 
+else if(movie.status === "PAID"){
 
-    else if(movie.status === "PAID"){
+    statusBox.innerHTML =
+    `
+    <div
+    style="
+    color:#ffd166;
+    font-weight:bold;">
+    🟡 PAID / SUBSCRIPTION
+    </div>
 
-        statusBox.innerHTML =
+    <p
+    style="
+    color:#888;
+    margin-top:10px;">
+    Source: ${movie.source}
+    </p>
+    `;
+
+
+    let officialButton = "";
+
+
+    if(movie.sourceUrl){
+
+        officialButton =
         `
-        <div
-        style="
-        color:#ffd166;
-        font-weight:bold;">
-        🟡 PAID / SUBSCRIPTION
-        </div>
+        <a
+        href="${movie.sourceUrl}"
+        class="button"
+        target="_blank"
+        rel="noopener noreferrer">
 
-        <p
-        style="
-        color:#888;
-        margin-top:10px;">
-        Source: ${movie.source}
-        </p>
+        VIEW OFFICIAL SOURCE
+
+        </a>
         `;
 
-
-        if(movie.sourceUrl){
-
-            watchButtons.innerHTML =
-            `
-            <a
-            href="${movie.sourceUrl}"
-            class="button"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            VIEW OFFICIAL SOURCE
-
-            </a>
-            `;
-
-        }
-
     }
+
+
+    watchButtons.innerHTML =
+    `
+    ${officialButton}
+
+    <a
+    href="watch-free.html?id=${movie.id}"
+    class="button watch-free-button">
+
+    WATCH FREE
+
+    </a>
+    `;
+
+}
+    
 
 
     else if(movie.status === "THEATRICAL"){
