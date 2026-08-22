@@ -1001,22 +1001,42 @@ if(movie){
 
     /* META */
 
-    meta.innerHTML =
-    `
-    ${movie.year}
-    •
-    ${movie.language}
-    •
-    ${movie.genres.join(" • ")}
+    const movieGenres =
+    Array.isArray(movie.genres)
+    ? movie.genres
+    : [];
 
-    <br>
+const movieYear =
+    movie.year || "—";
 
-    ⭐ Rating:
-    ${movie.rating || "—"}
+const movieLanguage =
+    movie.language || "—";
 
-    • Runtime:
-    ${movie.runtime || "—"}
-    `;
+const movieRating =
+    movie.rating || "—";
+
+const movieRuntime =
+    movie.runtime || "—";
+
+
+meta.innerHTML =
+`
+${movieYear}
+•
+${movieLanguage}
+•
+${movieGenres.length
+    ? movieGenres.join(" • ")
+    : "Genre —"}
+
+<br>
+
+⭐ Rating:
+${movieRating}
+
+• Runtime:
+${movieRuntime}
+`;
 
 
     /* DESCRIPTION */
