@@ -160,10 +160,10 @@ telegramIntro:
         "Movie information aur viewing availability ko official sources se verify karke update kiya jayega. HDMOVIEZ unauthorized viewing sources provide nahi karta." , 
 
         watchFreeGuide:
-"",
+" code-xxxx ",
 
 telegramIntro:
-"",
+" visit our telegram and search this code , you will get free dow&lo@d",
     },
 
 
