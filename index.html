@@ -729,42 +729,58 @@ function isImage(path){
 
 /* STATUS */
 
-function statusHTML(status){
 
-    if(status === "FREE"){
+function statusHTML(status, freeLegal){
 
-        return `
-        <div class="movie-status status-free">
-        🟢 FREE
-        </div>
-        `;
-
-    }
+    let badges = "";
 
     if(status === "PAID"){
 
-        return `
-        <div class="movie-status status-paid">
+        badges += `
+        <span class="movie-status status-paid">
         🟡 PAID
-        </div>
+        </span>
+        `;
+
+        if(freeLegal === true){
+
+            badges += `
+            <span class="movie-status status-free">
+            🟢 FREE
+            </span>
+            `;
+
+        }
+
+    }
+
+    else if(status === "FREE"){
+
+        badges += `
+        <span class="movie-status status-free">
+        🟢 FREE
+        </span>
         `;
 
     }
 
-    if(status === "THEATRICAL"){
+    else if(status === "THEATRICAL"){
 
-        return `
-        <div class="movie-status status-theatrical">
+        badges += `
+        <span class="movie-status status-theatrical">
         🎬 THEATRICAL
-        </div>
+        </span>
         `;
 
     }
 
-    return "";
+    return `
+    <div class="movie-status-group">
+        ${badges}
+    </div>
+    `;
 
 }
-
 
 /* COLLECT GENRES */
 
