@@ -76,7 +76,14 @@ const movies = [
 
 
         editorialNote:
-        "HDMOVIEZ par hum sirf movie ka naam aur watch link dene ke bajay ye batane ki koshish karte hain ki movie actually kis type ka experience deti hai. Current legal availability check karke hi watch karein."
+        "HDMOVIEZ par hum sirf movie ka naam aur watch link dene ke bajay ye batane ki koshish karte hain ki movie actually kis type ka experience deti hai. Current legal availability check karke hi watch karein." , 
+
+
+        watchFreeGuide:
+"",
+
+telegramIntro:
+"",
     },
 
 
@@ -150,7 +157,13 @@ const movies = [
 
 
         editorialNote:
-        "Movie information aur viewing availability ko official sources se verify karke update kiya jayega. HDMOVIEZ unauthorized viewing sources provide nahi karta."
+        "Movie information aur viewing availability ko official sources se verify karke update kiya jayega. HDMOVIEZ unauthorized viewing sources provide nahi karta." , 
+
+        watchFreeGuide:
+"",
+
+telegramIntro:
+"",
     },
 
 
@@ -232,7 +245,13 @@ const movies = [
 
 
         editorialNote:
-        "HDMOVIEZ par hum movie ko sirf 'watch link' ke roop mein nahi dikhana chahte. Idea ye hai ki aap pehle samjhein ki film kis type ki hai, phir decide karein ki aapke mood ke liye sahi hai ya nahi. Watching ke liye authorized source use karein."
+        "HDMOVIEZ par hum movie ko sirf 'watch link' ke roop mein nahi dikhana chahte. Idea ye hai ki aap pehle samjhein ki film kis type ki hai, phir decide karein ki aapke mood ke liye sahi hai ya nahi. Watching ke liye authorized source use karein." ,
+
+         watchFreeGuide:
+"",
+
+telegramIntro:
+"", 
     },
 
 
@@ -314,7 +333,13 @@ const movies = [
 
 
         editorialNote:
-        "Avtaar ki current legal availability region aur platform rights ke according change ho sakti hai. HDMOVIEZ authorized viewing options ko priority deta hai."
+        "Avtaar ki current legal availability region aur platform rights ke according change ho sakti hai. HDMOVIEZ authorized viewing options ko priority deta hai." ,
+
+        watchFreeGuide:
+"",
+
+telegramIntro:
+"",
     },
 
 
@@ -393,7 +418,13 @@ const movies = [
 
 
         editorialNote:
-        "Theatrical release ke baad streaming availability alag ho sakti hai. HDMOVIEZ par official availability confirm hone ke baad hi viewing information update ki jayegi."
+        "Theatrical release ke baad streaming availability alag ho sakti hai. HDMOVIEZ par official availability confirm hone ke baad hi viewing information update ki jayegi." ,
+
+        watchFreeGuide:
+"",
+
+telegramIntro:
+"",
     }
 
 ];
