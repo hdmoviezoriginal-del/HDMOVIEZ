@@ -1230,53 +1230,81 @@ if(movie){
        OFFICIAL SOURCE BUTTON
     ========================= */
 
-    let buttonsHTML = "";
+    /* =========================
+   WATCH BUTTONS
+========================= */
+
+watchButtons.innerHTML = "";
 
 
-    if(movie.sourceUrl){
+/* =========================
+   OFFICIAL SOURCE BUTTON
+========================= */
 
-        const buttonText =
-        movie.status === "FREE"
-        ? "WATCH NOW"
-        : "VIEW OFFICIAL SOURCE";
+if(
+    movie.sourceUrl &&
+    movie.sourceUrl.trim() !== ""
+){
+
+    const officialButton =
+    document.createElement("a");
+
+    officialButton.href =
+    movie.sourceUrl;
+
+    officialButton.className =
+    "button";
+
+    officialButton.target =
+    "_blank";
+
+    officialButton.rel =
+    "noopener noreferrer";
 
 
-        buttonsHTML +=
-        `
-        <a
-        href="${movie.sourceUrl}"
-        class="button"
-        target="_blank"
-        rel="noopener noreferrer">
+    if(movie.status === "FREE"){
 
-        ${buttonText}
+        officialButton.textContent =
+        "WATCH NOW";
 
-        </a>
-        `;
+    }
+
+    else{
+
+        officialButton.textContent =
+        "VIEW OFFICIAL SOURCE";
 
     }
 
 
-    /* =========================
-       WATCH FREE BUTTON
-       EVERY MOVIE
-    ========================= */
+    watchButtons.appendChild(
+        officialButton
+    );
 
-    buttonsHTML +=
-    `
-    <a
-    href="watch-free.html?id=${movie.id}"
-    class="button watch-free-button">
-
-    WATCH FREE
-
-    </a>
-    `;
+}
 
 
-    watchButtons.innerHTML =
-    buttonsHTML;
+/* =========================
+   WATCH FREE BUTTON
+   EVERY MOVIE
+========================= */
 
+const watchFreeButton =
+document.createElement("a");
+
+watchFreeButton.href =
+`watch-free.html?id=${encodeURIComponent(movie.id)}`;
+
+watchFreeButton.className =
+"button watch-free-button";
+
+watchFreeButton.textContent =
+"WATCH FREE";
+
+
+watchButtons.appendChild(
+    watchFreeButton
+);
 
     /* =========================
        SIMILAR MOVIES
