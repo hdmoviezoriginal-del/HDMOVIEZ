@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hdmoviezoriginal-del.github.io/HDMOVIEZ/sitemap.xml
