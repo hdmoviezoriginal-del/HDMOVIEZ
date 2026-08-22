@@ -1,3 +1,8 @@
+
+const HDMOVIEZ_TELEGRAM =
+"https://t.me/YourChannel";
+
+
 const movies = [
 
     /* =====================================================
