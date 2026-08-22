@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HDMOVIEZ — Movie</title>
 
 <meta
-name="description"
-content="Discover movie details and official legal viewing options on HDMOVIEZ."
->
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>HDMOVIEZ — Movie</title>
 
 <style>
 
@@ -20,15 +19,12 @@ content="Discover movie details and official legal viewing options on HDMOVIEZ."
     padding:0;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     background:#08090b;
     color:#fff;
     font-family:Arial,Helvetica,sans-serif;
 }
+
 
 /* HEADER */
 
@@ -79,11 +75,7 @@ main{
     display:grid;
     grid-template-columns:280px 1fr;
     gap:40px;
-    align-items:start;
 }
-
-
-/* POSTER */
 
 .poster{
     height:410px;
@@ -121,7 +113,6 @@ main{
 
 h1{
     font-size:clamp(35px,6vw,60px);
-    line-height:1.05;
     margin-bottom:15px;
 }
 
@@ -138,38 +129,7 @@ h1{
 }
 
 
-/* STATUS */
-
-.status-badge{
-    display:inline-block;
-    margin-top:20px;
-    padding:7px 11px;
-    border-radius:20px;
-    font-size:11px;
-    font-weight:bold;
-    letter-spacing:.5px;
-}
-
-.status-free{
-    color:#7cff9b;
-    background:#102518;
-    border:1px solid #214b2c;
-}
-
-.status-paid{
-    color:#ffd166;
-    background:#292313;
-    border:1px solid #4b401f;
-}
-
-.status-theatrical{
-    color:#9ecbff;
-    background:#111e2d;
-    border:1px solid #243f5d;
-}
-
-
-/* WATCH SECTION */
+/* WATCH */
 
 .watch-section{
     margin-top:35px;
@@ -181,13 +141,6 @@ h1{
 
 .watch-section h2{
     margin-bottom:18px;
-    font-size:22px;
-}
-
-.source-name{
-    color:#888;
-    margin-top:10px;
-    font-size:13px;
 }
 
 .buttons{
@@ -209,7 +162,7 @@ h1{
 }
 
 .button:hover{
-    background:#ddd;
+    opacity:.85;
 }
 
 .note{
@@ -226,8 +179,20 @@ h1{
     margin-top:60px;
 }
 
-.similar h2{
+.similar-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.similar-header h2{
     font-size:25px;
+}
+
+.similar-header span{
+    color:#777;
+    font-size:12px;
 }
 
 .similar-grid{
@@ -235,8 +200,10 @@ h1{
     grid-template-columns:
     repeat(auto-fill,minmax(150px,1fr));
     gap:15px;
-    margin-top:20px;
 }
+
+
+/* SIMILAR CARD */
 
 .card{
     background:#121317;
@@ -244,38 +211,36 @@ h1{
     border-radius:14px;
     overflow:hidden;
     transition:.25s;
-    text-decoration:none;
-    color:#fff;
 }
 
 .card:hover{
-    transform:translateY(-4px);
+    transform:translateY(-5px);
     border-color:#555;
 }
 
 .small-poster{
-    height:190px;
+    height:210px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:40px;
+    font-size:35px;
     background:
     linear-gradient(
         145deg,
         #292c33,
         #111216
     );
+    overflow:hidden;
 }
 
 .small-poster img{
     width:100%;
     height:100%;
     object-fit:cover;
-    display:block;
 }
 
 .card-info{
-    padding:13px;
+    padding:12px;
 }
 
 .card h3{
@@ -287,6 +252,28 @@ h1{
     color:#777;
     font-size:11px;
     line-height:1.5;
+}
+
+.card-button{
+    display:block;
+    margin-top:10px;
+    padding:9px;
+    border-radius:8px;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    text-align:center;
+    font-size:11px;
+    font-weight:bold;
+}
+
+
+/* NO SIMILAR */
+
+.no-similar{
+    color:#666;
+    padding:25px 0;
+    font-size:13px;
 }
 
 
@@ -305,10 +292,6 @@ footer strong{
     color:#fff;
     font-size:20px;
     letter-spacing:1px;
-}
-
-footer p{
-    margin-top:10px;
 }
 
 
@@ -331,12 +314,12 @@ footer p{
 
     .poster{
         height:380px;
-        max-width:420px;
+        max-width:320px;
         width:100%;
         margin:auto;
     }
 
-    .movie > div:last-child{
+    .movie-info{
         width:100%;
     }
 
@@ -344,17 +327,8 @@ footer p{
         font-size:42px;
     }
 
-    .watch-section{
-        padding:20px;
-    }
-
-    .buttons{
-        flex-direction:column;
-    }
-
-    .button{
-        text-align:center;
-        width:100%;
+    .similar{
+        margin-top:45px;
     }
 
     .similar-grid{
@@ -364,63 +338,89 @@ footer p{
     }
 
     .small-poster{
-        height:210px;
+        height:220px;
     }
+
+}
+
+
+/* VERY SMALL DEVICES */
+
+@media(max-width:380px){
+
+    .similar-grid{
+        grid-template-columns:
+        repeat(2,minmax(0,1fr));
+    }
+
+    .small-poster{
+        height:190px;
+    }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
 
-<!-- HEADER -->
-
 <header>
 
-<a href="index.html" class="logo">
+<a
+href="index.html"
+class="logo">
 HDMOVIEZ
 </a>
 
-<a href="index.html" class="back">
+<a
+href="index.html"
+class="back">
 ← Back
 </a>
 
 </header>
 
 
-<!-- MAIN -->
-
 <main>
+
+
+<!-- MOVIE DETAILS -->
 
 <div class="movie">
 
 
-<!-- POSTER -->
-
-<div class="poster" id="poster">
+<div
+class="poster"
+id="poster">
 🎬
 </div>
 
 
-<!-- DETAILS -->
-
-<div>
+<div class="movie-info">
 
 <div class="label">
 MOVIE DETAILS
 </div>
 
+
 <h1 id="title">
 Loading...
 </h1>
 
-<div class="meta" id="meta"></div>
 
-<p class="description" id="description"></p>
+<div
+class="meta"
+id="meta">
+</div>
 
-<div id="statusBadge"></div>
+
+<p
+class="description"
+id="description">
+</p>
 
 
 <!-- WATCH -->
@@ -431,17 +431,26 @@ Loading...
 Where to Watch
 </h2>
 
-<div id="statusBox"></div>
 
-<div class="buttons" id="watchButtons"></div>
+<div
+id="statusBox">
+</div>
+
+
+<div
+class="buttons"
+id="watchButtons">
+</div>
+
 
 <div class="note">
-HDMOVIEZ does not host movie files.
-Links are intended only for authorized/legal viewing sources.
-Availability may change by region and time.
+HDMOVIEZ links only to authorized viewing
+sources. Availability may change by region
+and time.
 </div>
 
 </div>
+
 
 </div>
 
@@ -452,21 +461,30 @@ Availability may change by region and time.
 
 <section class="similar">
 
+
+<div class="similar-header">
+
 <h2>
 Similar Movies
 </h2>
 
+<span id="similarCount">
+</span>
+
+</div>
+
+
 <div
 class="similar-grid"
-id="similarMovies">
+id="similarGrid">
 </div>
+
 
 </section>
 
+
 </main>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -474,108 +492,22 @@ id="similarMovies">
 HDMOVIEZ
 </strong>
 
-<p>
+<p style="margin-top:10px;">
 Har Movie, Ek Jagah.
 </p>
 
 </footer>
 
 
+<!-- MOVIE DATABASE -->
+
+<script src="movies.js"></script>
+
+
 <script>
 
-/* =================================
-   MOVIE DATABASE
-   ================================= */
 
-const movies = {
-
-    movie1:{
-        title:"Iron Man",
-        year:"2008",
-        language:"English",
-        genre:"Action • Sci-Fi",
-        rating:"7.9",
-        runtime:"126 min",
-        status:"PAID",
-        source:"JioHotstar",
-        sourceUrl:"https://www.hotstar.com/in",
-        description:
-        "Tony Stark, a billionaire industrialist, builds a powered suit of armor and becomes Iron Man.",
-        poster:"Ironman2008.jpg"
-    },
-
-
-    movie2:{
-        title:"Dhurandhar",
-        year:"2025",
-        language:"Hindi",
-        genre:"Action • Thriller",
-        rating:"—",
-        runtime:"—",
-        status:"PAID",
-        source:"JioHotstar",
-        sourceUrl:"https://www.hotstar.com/in",
-        description:
-        "Dhurandhar is an Indian action thriller.",
-        poster:"🎬"
-    },
-
-
-    movie3:{
-        title:"Deewaar",
-        year:"1975",
-        language:"Hindi",
-        genre:"Action • Crime • Drama",
-        rating:"—",
-        runtime:"168 min",
-        status:"FREE",
-        source:"Official Shemaroo YouTube",
-        sourceUrl:
-        "https://www.youtube.com/watch?v=xuOQqWU2UQA",
-        description:
-        "A classic Hindi crime drama starring Amitabh Bachchan and Shashi Kapoor.",
-        poster:"🎞️"
-    },
-
-
-    movie4:{
-        title:"Avtaar",
-        year:"1983",
-        language:"Hindi",
-        genre:"Drama",
-        rating:"—",
-        runtime:"150 min",
-        status:"PAID",
-        source:"ShemarooMe",
-        sourceUrl:
-        "https://www.shemaroome.com/bollywood/movies/avtaar",
-        description:
-        "A hardworking father faces difficult circumstances and struggles to rebuild his life.",
-        poster:"🎬"
-    },
-
-
-    movie5:{
-        title:"The Odyssey",
-        year:"2026",
-        language:"English",
-        genre:"Epic • Adventure • Drama",
-        rating:"—",
-        runtime:"—",
-        status:"THEATRICAL",
-        source:"",
-        sourceUrl:"",
-        description:
-        "Christopher Nolan's epic adaptation of Homer's The Odyssey.",
-        poster:"🏛️"
-    }
-
-};
-
-
-/* =================================
-   GET MOVIE ID
-   ================================= */
+/* GET MOVIE ID */
 
 const params =
 new URLSearchParams(
@@ -583,339 +515,419 @@ new URLSearchParams(
 );
 
 const id =
-params.get("id") || "movie1";
+params.get("id");
+
+
+/* FIND MOVIE */
 
 const movie =
-movies[id];
+movies.find(
+    item => item.id === id
+);
 
 
-/* =================================
-   LOAD MOVIE
-   ================================= */
+/* ELEMENTS */
+
+const title =
+document.getElementById("title");
+
+const meta =
+document.getElementById("meta");
+
+const description =
+document.getElementById("description");
+
+const poster =
+document.getElementById("poster");
+
+const statusBox =
+document.getElementById("statusBox");
+
+const watchButtons =
+document.getElementById("watchButtons");
+
+const similarGrid =
+document.getElementById("similarGrid");
+
+const similarCount =
+document.getElementById("similarCount");
+
+
+/* IMAGE CHECK */
+
+function isImage(path){
+
+    return(
+        typeof path === "string" &&
+        (
+            path.endsWith(".jpg") ||
+            path.endsWith(".jpeg") ||
+            path.endsWith(".png") ||
+            path.endsWith(".webp")
+        )
+    );
+
+}
+
+
+/* SHOW MOVIE */
 
 if(movie){
 
-    document
-    .getElementById("title")
-    .textContent =
+    document.title =
+    `HDMOVIEZ — ${movie.title}`;
+
+
+    title.textContent =
     movie.title;
 
 
-    document
-    .getElementById("meta")
-    .innerHTML =
-    `${movie.year} • ${movie.language} • ${movie.genre}<br>
-    ⭐ Rating: ${movie.rating} • Runtime: ${movie.runtime}`;
+    meta.innerHTML =
+    `
+    ${movie.year} •
+    ${movie.language} •
+    ${movie.genres.join(" • ")}
+    <br>
+    ⭐ Rating: ${movie.rating}
+    • Runtime: ${movie.runtime}
+    `;
 
 
-    document
-    .getElementById("description")
-    .textContent =
+    description.textContent =
     movie.description;
 
 
     /* POSTER */
 
-    const posterBox =
-    document.getElementById("poster");
+    if(isImage(movie.poster)){
 
-
-    if(
-        movie.poster.endsWith(".jpg") ||
-        movie.poster.endsWith(".png") ||
-        movie.poster.endsWith(".webp")
-    ){
-
-        posterBox.innerHTML =
-        `<img
+        poster.innerHTML =
+        `
+        <img
         src="${movie.poster}"
-        alt="${movie.title} movie poster">`;
+        alt="${movie.title} poster">
+        `;
 
     }
 
     else{
 
-        posterBox.textContent =
+        poster.textContent =
         movie.poster;
 
     }
 
 
-    /* STATUS */
-
-    const statusBadge =
-    document.getElementById("statusBadge");
-
-
-    if(movie.status === "FREE"){
-
-        statusBadge.innerHTML =
-        `<span class="status-badge status-free">
-        🟢 FREE
-        </span>`;
-
-    }
-
-    else if(movie.status === "PAID"){
-
-        statusBadge.innerHTML =
-        `<span class="status-badge status-paid">
-        🟡 PAID / SUBSCRIPTION
-        </span>`;
-
-    }
-
-    else if(movie.status === "THEATRICAL"){
-
-        statusBadge.innerHTML =
-        `<span class="status-badge status-theatrical">
-        🎬 THEATRICAL
-        </span>`;
-
-    }
-
-
-    /* WATCH SECTION */
-
-    const statusBox =
-    document.getElementById("statusBox");
-
-    const watchButtons =
-    document.getElementById("watchButtons");
-
+    /* WATCH STATUS */
 
     if(movie.status === "FREE"){
 
         statusBox.innerHTML =
-        `<p class="source-name">
-        Official free source: ${movie.source}
-        </p>`;
-
-
-        watchButtons.innerHTML =
-        `<a
-        href="${movie.sourceUrl}"
-        class="button"
-        target="_blank"
-        rel="noopener noreferrer">
-        WATCH NOW
-        </a>`;
-
-    }
-
-
-    else if(movie.status === "PAID"){
-
-        statusBox.innerHTML =
-        `<p class="source-name">
-        Official source: ${movie.source}
-        </p>`;
-
-
-        watchButtons.innerHTML =
-        `<a
-        href="${movie.sourceUrl}"
-        class="button"
-        target="_blank"
-        rel="noopener noreferrer">
-        VIEW OFFICIAL SOURCE
-        </a>`;
-
-    }
-
-
-    else if(movie.status === "THEATRICAL"){
-
-        statusBox.innerHTML =
-        `<p class="source-name">
-        Currently listed as theatrical.
-        Official streaming information will be added when available.
-        </p>`;
-
-        watchButtons.innerHTML = "";
-
-    }
-
-
-    /* =================================
-       SIMILAR MOVIES
-       ================================= */
-
-    const similarMovies =
-    document.getElementById("similarMovies");
-
-
-    const relatedMovies =
-    Object.keys(movies)
-    .filter(function(movieId){
-
-        return movieId !== id;
-
-    })
-    .filter(function(movieId){
-
-        const other =
-        movies[movieId];
-
-        /*
-           Match language OR first genre.
-        */
-
-        const currentGenre =
-        movie.genre
-        .split("•")[0]
-        .trim()
-        .toLowerCase();
-
-        const otherGenre =
-        other.genre
-        .split("•")[0]
-        .trim()
-        .toLowerCase();
-
-
-        return(
-            other.language === movie.language ||
-            otherGenre === currentGenre
-        );
-
-    })
-    .slice(0,4);
-
-
-    /*
-       If there aren't enough related movies,
-       fill remaining cards with other movies.
-    */
-
-    if(relatedMovies.length < 4){
-
-        Object.keys(movies)
-        .filter(function(movieId){
-
-            return(
-                movieId !== id &&
-                !relatedMovies.includes(movieId)
-            );
-
-        })
-        .slice(
-            0,
-            4 - relatedMovies.length
-        )
-        .forEach(function(movieId){
-
-            relatedMovies.push(movieId);
-
-        });
-
-    }
-
-
-    /* CREATE SIMILAR CARDS */
-
-    relatedMovies.forEach(function(movieId){
-
-        const other =
-        movies[movieId];
-
-
-        const card =
-        document.createElement("a");
-
-        card.className = "card";
-
-        card.href =
-        `movie.html?id=${movieId}`;
-
-
-        let posterHTML;
-
-
-        if(
-            other.poster.endsWith(".jpg") ||
-            other.poster.endsWith(".png") ||
-            other.poster.endsWith(".webp")
-        ){
-
-            posterHTML =
-            `<img
-            src="${other.poster}"
-            alt="${other.title} movie poster"
-            loading="lazy">`;
-
-        }
-
-        else{
-
-            posterHTML =
-            other.poster;
-
-        }
-
-
-        card.innerHTML =
-        `<div class="small-poster">
-            ${posterHTML}
+        `
+        <div
+        style="
+        color:#7cff9b;
+        font-weight:bold;">
+        🟢 FREE TO WATCH
         </div>
 
-        <div class="card-info">
-
-            <h3>
-            ${other.title}
-            </h3>
-
-            <div class="card-meta">
-            ${other.year} • ${other.language}
-            </div>
-
-        </div>`;
+        <p
+        style="
+        color:#888;
+        margin-top:10px;">
+        Source: ${movie.source}
+        </p>
+        `;
 
 
-        similarMovies.appendChild(card);
+        if(movie.sourceUrl){
 
-    });
+            watchButtons.innerHTML =
+            `
+            <a
+            href="${movie.sourceUrl}"
+            class="button"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            WATCH NOW
+
+            </a>
+            `;
+
+        }
+
+    }
+
+
+    else if(movie.status === "PAID"){
+
+        statusBox.innerHTML =
+        `
+        <div
+        style="
+        color:#ffd166;
+        font-weight:bold;">
+        🟡 PAID / SUBSCRIPTION
+        </div>
+
+        <p
+        style="
+        color:#888;
+        margin-top:10px;">
+        Source: ${movie.source}
+        </p>
+        `;
+
+
+        if(movie.sourceUrl){
+
+            watchButtons.innerHTML =
+            `
+            <a
+            href="${movie.sourceUrl}"
+            class="button"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            VIEW OFFICIAL SOURCE
+
+            </a>
+            `;
+
+        }
+
+    }
+
+
+    else if(movie.status === "THEATRICAL"){
+
+        statusBox.innerHTML =
+        `
+        <div
+        style="
+        color:#9ecbff;
+        font-weight:bold;">
+        🎬 THEATRICAL
+        </div>
+
+        <p
+        style="
+        color:#888;
+        margin-top:10px;">
+        Official streaming information
+        will be added when available.
+        </p>
+        `;
+
+    }
+
+
+    /* SIMILAR MOVIES */
+
+    const currentGenres =
+    movie.genres || [];
+
+
+    const currentLanguage =
+    movie.language;
+
+
+    const similarMovies =
+    movies
+    .filter(
+        item => item.id !== movie.id
+    )
+    .map(function(item){
+
+        let score = 0;
+
+
+        /* SAME GENRE = STRONG MATCH */
+
+        const sharedGenres =
+        item.genres.filter(
+            genre =>
+            currentGenres.includes(genre)
+        ).length;
+
+
+        score +=
+        sharedGenres * 10;
+
+
+        /* SAME LANGUAGE */
+
+        if(
+            item.language ===
+            currentLanguage
+        ){
+
+            score += 5;
+
+        }
+
+
+        /* SAME YEAR RANGE */
+
+        if(
+            Math.abs(
+                Number(item.year) -
+                Number(movie.year)
+            ) <= 5
+        ){
+
+            score += 1;
+
+        }
+
+
+        return {
+            movie:item,
+            score:score
+        };
+
+    })
+    .filter(
+        item => item.score > 0
+    )
+    .sort(
+        (a,b) =>
+        b.score - a.score
+    )
+    .slice(0,10)
+    .map(
+        item => item.movie
+    );
+
+
+    /* SHOW SIMILAR */
+
+    similarCount.textContent =
+    similarMovies.length
+    ? `${similarMovies.length} recommendations`
+    : "";
+
+
+    if(similarMovies.length === 0){
+
+        similarGrid.innerHTML =
+        `
+        <div class="no-similar">
+        No similar movies available yet.
+        </div>
+        `;
+
+    }
+
+
+    else{
+
+        similarMovies.forEach(
+            function(item){
+
+                const card =
+                document.createElement("div");
+
+                card.className =
+                "card";
+
+
+                let smallPoster;
+
+
+                if(isImage(item.poster)){
+
+                    smallPoster =
+                    `
+                    <img
+                    src="${item.poster}"
+                    alt="${item.title} poster"
+                    loading="lazy">
+                    `;
+
+                }
+
+                else{
+
+                    smallPoster =
+                    item.poster;
+
+                }
+
+
+                card.innerHTML =
+                `
+                <div class="small-poster">
+                    ${smallPoster}
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                    ${item.title}
+                    </h3>
+
+                    <div class="card-meta">
+                    ${item.year} •
+                    ${item.language}
+                    </div>
+
+                    <a
+                    href="movie.html?id=${item.id}"
+                    class="card-button">
+
+                    VIEW DETAILS
+
+                    </a>
+
+                </div>
+                `;
+
+
+                similarGrid.appendChild(card);
+
+            }
+        );
+
+    }
 
 }
 
 
-/* =================================
-   MOVIE NOT FOUND
-   ================================= */
+/* MOVIE NOT FOUND */
 
 else{
 
-    document
-    .getElementById("title")
-    .textContent =
+    document.title =
+    "HDMOVIEZ — Movie Not Found";
+
+
+    title.textContent =
     "Movie Not Found";
 
 
-    document
-    .getElementById("description")
-    .textContent =
+    meta.textContent =
+    "";
+
+
+    description.textContent =
     "This movie could not be found.";
 
 
-    document
-    .getElementById("meta")
-    .textContent = "";
-
-
-    document
-    .getElementById("statusBadge")
-    .innerHTML = "";
-
-    document
-    .getElementById("statusBox")
-    .innerHTML =
-    `<p class="source-name">
-    Please return to the HDMOVIEZ homepage.
-    </p>`;
+    similarGrid.innerHTML =
+    `
+    <div class="no-similar">
+    Please return to the movies page
+    and select a valid movie.
+    </div>
+    `;
 
 }
 
 </script>
 
+
 </body>
+
 </html>
