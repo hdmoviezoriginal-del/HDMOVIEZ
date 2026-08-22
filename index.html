@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,8 +8,10 @@
 
 <title>HDMOVIEZ — Har Movie, Ek Jagah.</title>
 
-<meta name="description"
-content="HDMOVIEZ — Har Movie, Ek Jagah. Discover movies and find legal ways to watch them.">
+<meta
+name="description"
+content="HDMOVIEZ — Har Movie, Ek Jagah. Discover movies and find legal ways to watch them."
+>
 
 <style>
 
@@ -27,6 +30,7 @@ body{
     color:#fff;
     font-family:Arial,Helvetica,sans-serif;
 }
+
 
 /* HEADER */
 
@@ -66,6 +70,7 @@ nav a:hover{
     color:#fff;
 }
 
+
 /* HERO */
 
 .hero{
@@ -75,6 +80,7 @@ nav a:hover{
     justify-content:center;
     text-align:center;
     padding:70px 20px;
+
     background:
     radial-gradient(
         circle at center,
@@ -109,6 +115,7 @@ nav a:hover{
     margin-bottom:30px;
 }
 
+
 /* SEARCH */
 
 .search-box{
@@ -135,6 +142,7 @@ nav a:hover{
     color:#777;
 }
 
+
 /* SECTIONS */
 
 section{
@@ -159,6 +167,7 @@ section{
     font-size:13px;
 }
 
+
 /* FILTERS */
 
 .filters{
@@ -176,7 +185,7 @@ section{
     background:#121317;
     color:#aaa;
     cursor:pointer;
-    transition:0.2s;
+    transition:.2s;
     font-size:13px;
 }
 
@@ -185,6 +194,7 @@ section{
     background:#fff;
     color:#111;
 }
+
 
 /* MOVIES */
 
@@ -200,7 +210,7 @@ section{
     border:1px solid #24262c;
     border-radius:15px;
     overflow:hidden;
-    transition:0.25s;
+    transition:.25s;
 }
 
 .movie-card:hover{
@@ -241,7 +251,26 @@ section{
 .movie-meta{
     color:#777;
     font-size:12px;
+    line-height:1.5;
 }
+
+.movie-status{
+    margin-top:8px;
+    font-size:11px;
+}
+
+.status-free{
+    color:#7cff9b;
+}
+
+.status-paid{
+    color:#ffd166;
+}
+
+.status-theatrical{
+    color:#9ecbff;
+}
+
 
 /* BUTTON */
 
@@ -258,6 +287,7 @@ section{
     font-weight:bold;
 }
 
+
 /* CATEGORIES */
 
 .categories{
@@ -273,15 +303,14 @@ section{
     border:1px solid #292b31;
     color:#ddd;
     cursor:pointer;
-    transition:0.2s;
-    user-select:none;
+    transition:.2s;
 }
 
-.category:hover,
-.category.active{
+.category:hover{
     background:#fff;
     color:#111;
 }
+
 
 /* TELEGRAM */
 
@@ -313,6 +342,7 @@ section{
     font-size:14px;
 }
 
+
 /* FOOTER */
 
 footer{
@@ -334,6 +364,7 @@ footer p{
     font-size:12px;
     line-height:1.6;
 }
+
 
 /* MOBILE / TABLET */
 
@@ -387,18 +418,15 @@ footer p{
         font-size:13px;
     }
 
-    .filter-btn{
-        padding:9px 14px;
-    }
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<!-- HEADER -->
 
 <header>
 
@@ -407,9 +435,19 @@ HDMOVIEZ
 </a>
 
 <nav>
-<a href="#free">Free</a>
-<a href="#genres">Genres</a>
-<a href="#languages">Languages</a>
+
+<a href="#free">
+Movies
+</a>
+
+<a href="#genres">
+Genres
+</a>
+
+<a href="#languages">
+Languages
+</a>
+
 </nav>
 
 </header>
@@ -433,14 +471,12 @@ Find Your Next Movie.
 Discover movies, explore genres and find legal ways to watch.
 </p>
 
-<!-- SEARCH: MOVIE NAME ONLY -->
-
 <div class="search-box">
 
 <input
 type="search"
-placeholder="🔎 Search movie name..."
 id="searchInput"
+placeholder="🔎 Search movie name..."
 autocomplete="off"
 >
 
@@ -457,240 +493,27 @@ autocomplete="off"
 
 <div class="section-header">
 
-<h2>🎬 Movies</h2>
+<h2>
+🎬 Movies
+</h2>
 
-<span>Legal watch options</span>
-
-</div>
-
-
-<!-- MAIN FILTERS -->
-
-<div class="filters">
-
-<button
-class="filter-btn active"
-data-filter="all">
-All
-</button>
-
-<button
-class="filter-btn"
-data-filter="hindi">
-Hindi
-</button>
-
-<button
-class="filter-btn"
-data-filter="english">
-English
-</button>
-
-<button
-class="filter-btn"
-data-filter="action">
-Action
-</button>
-
-<button
-class="filter-btn"
-data-filter="drama">
-Drama
-</button>
-
-<button
-class="filter-btn"
-data-filter="free">
-Free
-</button>
+<span id="movieCount">
+</span>
 
 </div>
 
-
-<div class="movie-grid">
-
-
-<!-- IRON MAN -->
 
 <div
-class="movie-card"
-data-language="english"
-data-genre="action"
-data-status="paid">
-
-<div class="poster">
-
-<img
-src="Ironman2008.jpg"
-alt="Iron Man 2008 movie poster"
-loading="lazy">
-
+class="filters"
+id="filters">
 </div>
 
-<div class="movie-info">
-
-<h3>Iron Man</h3>
-
-<div class="movie-meta">
-2008 • English • Action
-</div>
-
-<div style="color:#ffd166;font-size:11px;margin-top:8px;">
-🟡 PAID
-</div>
-
-<a
-href="movie.html?id=movie1"
-class="watch-button">
-VIEW DETAILS
-</a>
-
-</div>
-
-</div>
-
-
-<!-- DHURANDHAR -->
 
 <div
-class="movie-card"
-data-language="hindi"
-data-genre="action"
-data-status="paid">
-
-<div class="poster">
-🎬
+class="movie-grid"
+id="movieGrid">
 </div>
 
-<div class="movie-info">
-
-<h3>Dhurandhar</h3>
-
-<div class="movie-meta">
-2025 • Hindi • Action
-</div>
-
-<div style="color:#ffd166;font-size:11px;margin-top:8px;">
-🟡 PAID
-</div>
-
-<a
-href="movie.html?id=movie2"
-class="watch-button">
-VIEW DETAILS
-</a>
-
-</div>
-
-</div>
-
-
-<!-- DEEWAAR -->
-
-<div
-class="movie-card"
-data-language="hindi"
-data-genre="crime"
-data-status="free">
-
-<div class="poster">
-🎞️
-</div>
-
-<div class="movie-info">
-
-<h3>Deewaar</h3>
-
-<div class="movie-meta">
-1975 • Hindi • Crime
-</div>
-
-<div style="color:#7cff9b;font-size:11px;margin-top:8px;">
-🟢 FREE
-</div>
-
-<a
-href="movie.html?id=movie3"
-class="watch-button">
-WATCH OPTIONS
-</a>
-
-</div>
-
-</div>
-
-
-<!-- AVTAAR -->
-
-<div
-class="movie-card"
-data-language="hindi"
-data-genre="drama"
-data-status="paid">
-
-<div class="poster">
-🎬
-</div>
-
-<div class="movie-info">
-
-<h3>Avtaar</h3>
-
-<div class="movie-meta">
-1983 • Hindi • Drama
-</div>
-
-<div style="color:#ffd166;font-size:11px;margin-top:8px;">
-🟡 PAID
-</div>
-
-<a
-href="movie.html?id=movie4"
-class="watch-button">
-VIEW DETAILS
-</a>
-
-</div>
-
-</div>
-
-
-<!-- THE ODYSSEY -->
-
-<div
-class="movie-card"
-data-language="english"
-data-genre="epic"
-data-status="theatrical">
-
-<div class="poster">
-🏛️
-</div>
-
-<div class="movie-info">
-
-<h3>The Odyssey</h3>
-
-<div class="movie-meta">
-2026 • English • Epic
-</div>
-
-<div style="color:#9ecbff;font-size:11px;margin-top:8px;">
-🎬 THEATRICAL
-</div>
-
-<a
-href="movie.html?id=movie5"
-class="watch-button">
-VIEW DETAILS
-</a>
-
-</div>
-
-</div>
-
-
-</div>
 
 </section>
 
@@ -701,44 +524,15 @@ VIEW DETAILS
 
 <div class="section-header">
 
-<h2>🎭 Browse by Genre</h2>
+<h2>
+🎭 Browse by Genre
+</h2>
 
 </div>
 
-<div class="categories">
-
-<div class="category" data-category="action">
-Action
-</div>
-
-<div class="category" data-category="comedy">
-Comedy
-</div>
-
-<div class="category" data-category="drama">
-Drama
-</div>
-
-<div class="category" data-category="horror">
-Horror
-</div>
-
-<div class="category" data-category="romance">
-Romance
-</div>
-
-<div class="category" data-category="family">
-Family
-</div>
-
-<div class="category" data-category="thriller">
-Thriller
-</div>
-
-<div class="category" data-category="adventure">
-Adventure
-</div>
-
+<div
+class="categories"
+id="genreCategories">
 </div>
 
 </section>
@@ -750,56 +544,29 @@ Adventure
 
 <div class="section-header">
 
-<h2>🌎 Languages</h2>
+<h2>
+🌎 Languages
+</h2>
 
 </div>
 
-<div class="categories">
-
-<div class="category" data-language-filter="hindi">
-Hindi
-</div>
-
-<div class="category" data-language-filter="english">
-English
-</div>
-
-<div class="category" data-language-filter="tamil">
-Tamil
-</div>
-
-<div class="category" data-language-filter="telugu">
-Telugu
-</div>
-
-<div class="category" data-language-filter="malayalam">
-Malayalam
-</div>
-
-<div class="category" data-language-filter="kannada">
-Kannada
-</div>
-
-<div class="category" data-language-filter="punjabi">
-Punjabi
-</div>
-
-<div class="category" data-language-filter="bengali">
-Bengali
-</div>
-
+<div
+class="categories"
+id="languageCategories">
 </div>
 
 </section>
 
 
-<!-- TELEGRAM -->
+<!-- COMMUNITY -->
 
 <section>
 
 <div class="telegram">
 
-<h2>📢 HDMOVIEZ Community</h2>
+<h2>
+📢 HDMOVIEZ Community
+</h2>
 
 <p>
 Find legal free-watch options, movie updates and viewing guides.
@@ -817,11 +584,11 @@ JOIN TELEGRAM
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-<strong>HDMOVIEZ</strong>
+<strong>
+HDMOVIEZ
+</strong>
 
 <p>
 Har Movie, Ek Jagah.
@@ -835,345 +602,534 @@ Watch links should point only to authorized/legal sources.
 </footer>
 
 
+<!-- MOVIE DATABASE -->
+
+<script src="movies.js"></script>
+
+
 <script>
 
-/* ================================
-   SEARCH + MOVIE FILTER SYSTEM
-   ================================ */
+/* ELEMENTS */
 
 const searchInput =
 document.getElementById("searchInput");
 
-const movieCards =
-document.querySelectorAll(".movie-card");
+const movieGrid =
+document.getElementById("movieGrid");
 
-const filterButtons =
-document.querySelectorAll(".filter-btn");
+const filters =
+document.getElementById("filters");
 
-const genreButtons =
-document.querySelectorAll("[data-category]");
+const genreCategories =
+document.getElementById("genreCategories");
 
-const languageButtons =
-document.querySelectorAll("[data-language-filter]");
+const languageCategories =
+document.getElementById("languageCategories");
+
+const movieCount =
+document.getElementById("movieCount");
+
 
 let activeFilter = "all";
+let activeFilterType = "all";
 
 
-/* ================================
-   UPDATE MOVIES
-   ================================ */
+/* IMAGE CHECK */
 
-function updateMovies(){
+function isImage(path){
 
-    /*
-       IMPORTANT:
-       Search checks MOVIE NAME ONLY.
-    */
+    return(
+        typeof path === "string" &&
+        (
+            path.endsWith(".jpg") ||
+            path.endsWith(".jpeg") ||
+            path.endsWith(".png") ||
+            path.endsWith(".webp")
+        )
+    );
 
-    const search =
-        searchInput.value
-        .toLowerCase()
-        .trim();
-
-
-    movieCards.forEach(function(card){
-
-        const titleElement =
-            card.querySelector("h3");
-
-        const title =
-            titleElement
-            ? titleElement.textContent
-                .toLowerCase()
-            : "";
+}
 
 
-        const language =
-            card.dataset.language || "";
+/* STATUS */
 
-        const genre =
-            card.dataset.genre || "";
+function statusHTML(status){
 
-        const status =
-            card.dataset.status || "";
+    if(status === "FREE"){
 
+        return `
+        <div class="movie-status status-free">
+        🟢 FREE
+        </div>
+        `;
 
-        let filterMatch = true;
+    }
 
+    if(status === "PAID"){
 
-        /* MAIN FILTERS */
+        return `
+        <div class="movie-status status-paid">
+        🟡 PAID
+        </div>
+        `;
 
-        if(activeFilter === "hindi"){
+    }
 
-            filterMatch =
-                language === "hindi";
+    if(status === "THEATRICAL"){
 
-        }
+        return `
+        <div class="movie-status status-theatrical">
+        🎬 THEATRICAL
+        </div>
+        `;
 
-        else if(activeFilter === "english"){
+    }
 
-            filterMatch =
-                language === "english";
+    return "";
 
-        }
-
-        else if(activeFilter === "action"){
-
-            filterMatch =
-                genre === "action";
-
-        }
-
-        else if(activeFilter === "drama"){
-
-            filterMatch =
-                genre === "drama";
-
-        }
-
-        else if(activeFilter === "free"){
-
-            filterMatch =
-                status === "free";
-
-        }
+}
 
 
-        /*
-           SEARCH = MOVIE NAME ONLY
-        */
+/* COLLECT GENRES */
 
-        const searchMatch =
-            title.includes(search);
+const allGenres = [
+    ...new Set(
+        movies.flatMap(movie => movie.genres)
+    )
+].sort();
 
 
-        card.style.display =
-            filterMatch && searchMatch
-            ? ""
-            : "none";
+/* COLLECT LANGUAGES */
+
+const allLanguages = [
+    ...new Set(
+        movies.map(movie => movie.language)
+    )
+].sort();
+
+
+/* CREATE FILTERS */
+
+function createFilters(){
+
+    filters.innerHTML = "";
+
+    const allButton =
+    document.createElement("button");
+
+    allButton.className =
+    "filter-btn active";
+
+    allButton.textContent =
+    "All";
+
+    allButton.dataset.type =
+    "all";
+
+    allButton.dataset.value =
+    "all";
+
+    filters.appendChild(allButton);
+
+
+    allLanguages.forEach(function(language){
+
+        const button =
+        document.createElement("button");
+
+        button.className =
+        "filter-btn";
+
+        button.textContent =
+        language;
+
+        button.dataset.type =
+        "language";
+
+        button.dataset.value =
+        language;
+
+        filters.appendChild(button);
+
+    });
+
+
+    allGenres.forEach(function(genre){
+
+        const button =
+        document.createElement("button");
+
+        button.className =
+        "filter-btn";
+
+        button.textContent =
+        genre;
+
+        button.dataset.type =
+        "genre";
+
+        button.dataset.value =
+        genre;
+
+        filters.appendChild(button);
+
+    });
+
+
+    const freeButton =
+    document.createElement("button");
+
+    freeButton.className =
+    "filter-btn";
+
+    freeButton.textContent =
+    "Free";
+
+    freeButton.dataset.type =
+    "status";
+
+    freeButton.dataset.value =
+    "FREE";
+
+    filters.appendChild(freeButton);
+
+}
+
+
+/* GENRE CATEGORIES */
+
+function createGenreCategories(){
+
+    genreCategories.innerHTML = "";
+
+    allGenres.forEach(function(genre){
+
+        const button =
+        document.createElement("div");
+
+        button.className =
+        "category";
+
+        button.textContent =
+        genre;
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                activeFilterType =
+                "genre";
+
+                activeFilter =
+                genre;
+
+                updateActiveButton();
+
+                renderMovies();
+
+                document
+                .getElementById("free")
+                .scrollIntoView({
+                    behavior:"smooth"
+                });
+
+            }
+        );
+
+        genreCategories.appendChild(button);
 
     });
 
 }
 
 
-/* ================================
-   SEARCH EVENT
-   ================================ */
+/* LANGUAGE CATEGORIES */
 
-searchInput.addEventListener(
-    "input",
-    updateMovies
+function createLanguageCategories(){
+
+    languageCategories.innerHTML = "";
+
+    allLanguages.forEach(function(language){
+
+        const button =
+        document.createElement("div");
+
+        button.className =
+        "category";
+
+        button.textContent =
+        language;
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                activeFilterType =
+                "language";
+
+                activeFilter =
+                language;
+
+                updateActiveButton();
+
+                renderMovies();
+
+                document
+                .getElementById("free")
+                .scrollIntoView({
+                    behavior:"smooth"
+                });
+
+            }
+        );
+
+        languageCategories.appendChild(button);
+
+    });
+
+}
+
+
+/* FILTER CLICK */
+
+filters.addEventListener(
+    "click",
+    function(event){
+
+        if(!event.target.matches(".filter-btn")){
+            return;
+        }
+
+        activeFilterType =
+        event.target.dataset.type;
+
+        activeFilter =
+        event.target.dataset.value;
+
+        updateActiveButton();
+
+        renderMovies();
+
+    }
 );
 
 
-/* ================================
-   MAIN FILTER BUTTONS
-   ================================ */
+/* ACTIVE BUTTON */
 
-filterButtons.forEach(function(button){
+function updateActiveButton(){
 
-    button.addEventListener(
-        "click",
-        function(){
+    document
+    .querySelectorAll(".filter-btn")
+    .forEach(function(button){
 
-            filterButtons.forEach(
-                function(btn){
-                    btn.classList.remove("active");
-                }
+        const match =
+        button.dataset.type ===
+        activeFilterType &&
+        button.dataset.value ===
+        activeFilter;
+
+        button.classList.toggle(
+            "active",
+            match
+        );
+
+    });
+
+}
+
+
+/* FILTER MOVIES */
+
+function getFilteredMovies(){
+
+    const search =
+    searchInput.value
+    .toLowerCase()
+    .trim();
+
+
+    return movies.filter(function(movie){
+
+        /* SEARCH ONLY MOVIE NAME */
+
+        const searchMatch =
+        movie.title
+        .toLowerCase()
+        .includes(search);
+
+
+        if(!searchMatch){
+            return false;
+        }
+
+
+        if(activeFilterType === "all"){
+            return true;
+        }
+
+
+        if(activeFilterType === "language"){
+
+            return(
+                movie.language ===
+                activeFilter
             );
-
-
-            this.classList.add("active");
-
-
-            activeFilter =
-                this.dataset.filter;
-
-
-            updateMovies();
-
-            /*
-               Bring user back to movie section
-               after choosing a filter.
-            */
-
-            document
-            .getElementById("free")
-            .scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
 
         }
-    );
-
-});
 
 
-/* ================================
-   GENRE BUTTONS
-   ================================ */
+        if(activeFilterType === "genre"){
 
-genreButtons.forEach(function(button){
-
-    button.addEventListener(
-        "click",
-        function(){
-
-            const selectedGenre =
-                this.dataset.category;
-
-
-            filterButtons.forEach(
-                function(btn){
-                    btn.classList.remove("active");
-                }
+            return movie.genres.includes(
+                activeFilter
             );
-
-
-            genreButtons.forEach(
-                function(btn){
-                    btn.classList.remove("active");
-                }
-            );
-
-
-            this.classList.add("active");
-
-
-            activeFilter =
-                selectedGenre;
-
-
-            movieCards.forEach(
-                function(card){
-
-                    const title =
-                        card.querySelector("h3")
-                        ?.textContent
-                        .toLowerCase() || "";
-
-                    const search =
-                        searchInput.value
-                        .toLowerCase()
-                        .trim();
-
-
-                    const matchesGenre =
-                        card.dataset.genre ===
-                        selectedGenre;
-
-
-                    const matchesSearch =
-                        title.includes(search);
-
-
-                    card.style.display =
-                        matchesGenre &&
-                        matchesSearch
-                        ? ""
-                        : "none";
-
-                }
-            );
-
-
-            document
-            .getElementById("free")
-            .scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
 
         }
-    );
-
-});
 
 
-/* ================================
-   LANGUAGE BUTTONS
-   ================================ */
+        if(activeFilterType === "status"){
 
-languageButtons.forEach(function(button){
-
-    button.addEventListener(
-        "click",
-        function(){
-
-            const selectedLanguage =
-                this.dataset.languageFilter;
-
-
-            filterButtons.forEach(
-                function(btn){
-                    btn.classList.remove("active");
-                }
+            return(
+                movie.status ===
+                activeFilter
             );
-
-
-            languageButtons.forEach(
-                function(btn){
-                    btn.classList.remove("active");
-                }
-            );
-
-
-            this.classList.add("active");
-
-
-            movieCards.forEach(
-                function(card){
-
-                    const title =
-                        card.querySelector("h3")
-                        ?.textContent
-                        .toLowerCase() || "";
-
-                    const search =
-                        searchInput.value
-                        .toLowerCase()
-                        .trim();
-
-
-                    const matchesLanguage =
-                        card.dataset.language ===
-                        selectedLanguage;
-
-
-                    const matchesSearch =
-                        title.includes(search);
-
-
-                    card.style.display =
-                        matchesLanguage &&
-                        matchesSearch
-                        ? ""
-                        : "none";
-
-                }
-            );
-
-
-            document
-            .getElementById("free")
-            .scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
 
         }
-    );
-
-});
 
 
-/* ================================
-   INITIAL LOAD
-   ================================ */
+        return true;
 
-updateMovies();
+    });
+
+}
+
+
+/* RENDER MOVIES */
+
+function renderMovies(){
+
+    const filteredMovies =
+    getFilteredMovies();
+
+
+    movieGrid.innerHTML = "";
+
+
+    movieCount.textContent =
+    `${filteredMovies.length} movie${
+        filteredMovies.length === 1
+        ? ""
+        : "s"
+    }`;
+
+
+    if(filteredMovies.length === 0){
+
+        movieGrid.innerHTML =
+        `
+        <p style="
+            grid-column:1/-1;
+            text-align:center;
+            color:#777;
+            padding:40px 10px;
+        ">
+        No movies found.
+        </p>
+        `;
+
+        return;
+
+    }
+
+
+    filteredMovies.forEach(function(movie){
+
+        const card =
+        document.createElement("div");
+
+        card.className =
+        "movie-card";
+
+
+        let posterHTML;
+
+
+        if(isImage(movie.poster)){
+
+            posterHTML =
+            `
+            <img
+            src="${movie.poster}"
+            alt="${movie.title} movie poster"
+            loading="lazy">
+            `;
+
+        }
+
+        else{
+
+            posterHTML =
+            movie.poster;
+
+        }
+
+
+        card.innerHTML =
+        `
+        <div class="poster">
+            ${posterHTML}
+        </div>
+
+        <div class="movie-info">
+
+            <h3>
+            ${movie.title}
+            </h3>
+
+            <div class="movie-meta">
+            ${movie.year} •
+            ${movie.language} •
+            ${movie.genres.join(" • ")}
+            </div>
+
+            ${statusHTML(movie.status)}
+
+            <a
+            href="movie.html?id=${movie.id}"
+            class="watch-button">
+
+            VIEW DETAILS
+
+            </a>
+
+        </div>
+        `;
+
+
+        movieGrid.appendChild(card);
+
+    });
+
+}
+
+
+/* SEARCH */
+
+searchInput.addEventListener(
+    "input",
+    renderMovies
+);
+
+
+/* START */
+
+createFilters();
+
+createGenreCategories();
+
+createLanguageCategories();
+
+renderMovies();
 
 </script>
 
