@@ -430,6 +430,94 @@ telegramIntro:
 
 telegramIntro:
 "",
-    }
+    },
+
+    /* =====================================================
+       MOVIE 6 — Sheep detectives 
+    ===================================================== */
+
+    {
+    id: "sheep-detectives-2026",
+
+    title: "The Sheep Detectives",
+
+    year: 2026,
+
+    language: "English",
+
+    genres: [
+        "Comedy",
+        "Mystery",
+        "Family"
+    ],
+
+    rating: "7.5/10",
+
+    runtime: "1h 49m",
+
+    status: "THEATRICAL",
+
+    source: "Sony Pictures India",
+
+    sourceUrl:
+    "https://www.sonypictures.in/movies/sheep-detectives",
+
+    poster: "🐑",
+
+    tagline:
+    "A flock of sheep takes on an unexpected mystery.",
+
+    overview:
+    "When a mysterious incident disrupts life on a farm, a group of sheep discovers that they may be better detectives than anyone expects. Following clues and investigating human suspects, the unlikely detectives begin an unexpected investigation of their own.",
+
+    whyWatch:
+    "The Sheep Detectives combines a lighthearted mystery with an unusual group of amateur investigators. Its sheep-led detective story, ensemble cast and playful premise make it an appealing choice for viewers looking for something different from a conventional mystery.",
+
+    whatMakesItSpecial:
+    "The film puts a flock of sheep at the centre of a human-style mystery. The unusual premise is paired with an ensemble cast and a story that mixes comedy, investigation and family-friendly adventure.",
+
+    storyContext:
+    "The story follows a flock of sheep whose peaceful life is interrupted by a mysterious incident. Inspired by the detective stories they have heard from their shepherd, they begin examining clues and trying to uncover what really happened.",
+
+    themes: [
+        "Mystery",
+        "Teamwork",
+        "Friendship",
+        "Curiosity",
+        "Courage",
+        "Problem Solving"
+    ],
+
+    director:
+    "Kyle Balda",
+
+    cast: [
+        "Hugh Jackman",
+        "Nicholas Braun",
+        "Nicholas Galitzine",
+        "Molly Gordon",
+        "Emma Thompson",
+        "Julia Louis-Dreyfus",
+        "Bryan Cranston",
+        "Patrick Stewart",
+        "Bella Ramsey",
+        "Brett Goldstein"
+    ],
+
+    whoShouldWatch:
+    "Viewers who enjoy comedy mysteries, unusual detective stories, ensemble casts and light family-oriented adventures may enjoy The Sheep Detectives.",
+
+    whoMayNotLike:
+    "Viewers looking for a serious or dark crime thriller may find the film's comedic and unusual animal-detective premise too lighthearted.",
+
+    editorialNote:
+    "The Sheep Detectives stands out for turning a familiar detective-story setup into an unusual sheep-led mystery. Its combination of comedy, mystery and an ensemble cast gives the film a distinctive premise.",
+
+    watchFreeGuide:
+    "search #### on telegram",
+
+    telegramIntro:
+    "for legel uses."
+},
 
 ];
