@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>HDMOVIEZ — Legal Viewing Guide</title>
+
+<meta
+name="description"
+content="Find legal ways to watch movies and get useful viewing information on HDMOVIEZ.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#08090b;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+}
+
+
+/* HEADER */
+
+header{
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    border-bottom:1px solid #22242a;
+
+    background:#08090b;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+
+    font-size:22px;
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.back{
+    color:#aaa;
+    text-decoration:none;
+
+    font-size:14px;
+}
+
+.back:hover{
+    color:#fff;
+}
+
+
+/* MAIN */
+
+main{
+    max-width:800px;
+
+    margin:auto;
+
+    padding:70px 6%;
+}
+
+
+/* CARD */
+
+.guide-card{
+    background:#111216;
+
+    border:1px solid #292b31;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    text-align:center;
+}
+
+
+/* LABEL */
+
+.label{
+    color:#888;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+}
+
+
+/* TITLE */
+
+h1{
+    font-size:
+    clamp(32px,6vw,52px);
+
+    line-height:1.1;
+
+    margin-bottom:15px;
+}
+
+
+/* DESCRIPTION */
+
+.intro{
+    color:#999;
+
+    line-height:1.7;
+
+    max-width:600px;
+
+    margin:0 auto 30px;
+}
+
+
+/* COUNTDOWN */
+
+.countdown-box{
+    margin:30px auto;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#191a1f;
+
+    border:1px solid #34363d;
+}
+
+#countdown{
+    font-size:52px;
+
+    font-weight:bold;
+}
+
+
+/* WAIT TEXT */
+
+.wait-text{
+    color:#777;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    margin-bottom:25px;
+}
+
+
+/* RESULT */
+
+.result{
+    display:none;
+
+    margin-top:30px;
+
+    padding-top:30px;
+
+    border-top:1px solid #292b31;
+}
+
+.result h2{
+    font-size:24px;
+
+    margin-bottom:12px;
+}
+
+.result p{
+    color:#aaa;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+}
+
+
+/* TELEGRAM */
+
+.telegram-box{
+    margin-top:25px;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    background:#15161a;
+
+    border:1px solid #292b31;
+}
+
+.telegram-box h3{
+    margin-bottom:10px;
+}
+
+.telegram-box p{
+    color:#999;
+
+    margin-bottom:18px;
+}
+
+.telegram-button{
+    display:inline-block;
+
+    padding:13px 22px;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    color:#111;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:13px;
+}
+
+
+/* LEGAL NOTE */
+
+.legal-note{
+    margin-top:25px;
+
+    color:#666;
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+
+/* FOOTER */
+
+footer{
+    margin-top:30px;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    border-top:1px solid #22242a;
+
+    color:#777;
+
+    font-size:12px;
+}
+
+footer strong{
+    color:#fff;
+
+    font-size:20px;
+
+    letter-spacing:1px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    main{
+        padding:45px 5%;
+    }
+
+    .guide-card{
+        padding:30px 20px;
+    }
+
+    .countdown-box{
+        width:130px;
+        height:130px;
+    }
+
+    #countdown{
+        font-size:45px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<a
+href="index.html"
+class="logo">
+
+HDMOVIEZ
+
+</a>
+
+
+<a
+href="javascript:history.back()"
+class="back">
+
+← Back
+
+</a>
+
+</header>
+
+
+<main>
+
+
+<div class="guide-card">
+
+
+<div class="label">
+LEGAL VIEWING GUIDE
+</div>
+
+
+<h1 id="movieTitle">
+Loading...
+</h1>
+
+
+<p class="intro">
+
+We're preparing the viewing information
+for this movie.
+
+Please wait a few seconds.
+
+</p>
+
+
+<!-- COUNTDOWN -->
+
+<div class="countdown-box">
+
+<span id="countdown">
+10
+</span>
+
+</div>
+
+
+<p class="wait-text">
+
+Your guide will appear when the countdown
+finishes.
+
+</p>
+
+
+<!-- RESULT -->
+
+<div
+class="result"
+id="result">
+
+
+<h2>
+How Can You Watch It?
+</h2>
+
+
+<p id="guideText">
+
+</p>
+
+
+<div class="telegram-box">
+
+<h3>
+📢 Want More Movie Updates?
+</h3>
+
+
+<p>
+
+We'll share movie information,
+legal viewing guides and updates
+through our community.
+
+</p>
+
+
+<a
+href="#"
+class="telegram-button"
+id="telegramButton"
+onclick="
+alert('Telegram link will be added here.');
+return false;
+">
+
+JOIN TELEGRAM
+
+</a>
+
+</div>
+
+
+<div class="legal-note">
+
+HDMOVIEZ does not host or distribute
+copyrighted movie files.
+
+Viewing availability can vary by
+country, platform and time.
+
+Always use authorized sources.
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+HDMOVIEZ
+</strong>
+
+<p style="margin-top:10px;">
+Har Movie, Ek Jagah.
+</p>
+
+</footer>
+
+
+<!-- MOVIE DATABASE -->
+
+<script src="movies.js"></script>
+
+
+<script>
+
+
+/* =========================
+   GET MOVIE
+========================= */
+
+const params =
+new URLSearchParams(
+    window.location.search
+);
+
+const id =
+params.get("id");
+
+
+const movie =
+movies.find(
+    item => item.id === id
+);
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const movieTitle =
+document.getElementById(
+    "movieTitle"
+);
+
+const countdown =
+document.getElementById(
+    "countdown"
+);
+
+const result =
+document.getElementById(
+    "result"
+);
+
+const guideText =
+document.getElementById(
+    "guideText"
+);
+
+
+/* =========================
+   MOVIE TITLE
+========================= */
+
+if(movie){
+
+    movieTitle.textContent =
+    movie.title;
+
+
+    /*
+       We deliberately do not
+       show an unauthorized download
+       or streaming link here.
+    */
+
+    if(movie.status === "FREE"){
+
+        guideText.textContent =
+        `This movie currently has a listed
+        legal viewing option. You can use
+        the official source shown on the
+        HDMOVIEZ movie page.`;
+
+    }
+
+    else if(movie.status === "PAID"){
+
+        guideText.textContent =
+        `This movie may require a subscription
+        or purchase depending on your region.
+        Check the official platform listed on
+        the movie page for current availability.`;
+
+    }
+
+    else if(movie.status === "THEATRICAL"){
+
+        guideText.textContent =
+        `This movie is currently listed as
+        theatrical. If you want to watch it
+        legally, check local theatres and wait
+        for an official streaming release.`;
+
+    }
+
+    else{
+
+        guideText.textContent =
+        `Check the movie's official sources
+        for current legal viewing options.`;
+
+    }
+
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+let seconds = 10;
+
+
+const timer =
+setInterval(function(){
+
+    seconds--;
+
+    countdown.textContent =
+    seconds;
+
+
+    if(seconds <= 0){
+
+        clearInterval(timer);
+
+
+        countdown.textContent =
+        "✓";
+
+
+        result.style.display =
+        "block";
+
+    }
+
+},1000);
+
+</script>
+
+
+</body>
+
+</html>
