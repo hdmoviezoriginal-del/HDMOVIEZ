@@ -11,6 +11,12 @@ content="width=device-width, initial-scale=1.0">
 
 <title>HDMOVIEZ — Movie</title>
 
+<meta
+name="description"
+id="pageDescription"
+content="Discover movie information, reviews and legal viewing options on HDMOVIEZ.">
+
+
 <style>
 
 *{
@@ -19,23 +25,35 @@ content="width=device-width, initial-scale=1.0">
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#08090b;
     color:#fff;
     font-family:Arial,Helvetica,sans-serif;
+    line-height:1.6;
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
     height:72px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     padding:0 6%;
+
     border-bottom:1px solid #22242a;
+
     background:#08090b;
+
     position:sticky;
     top:0;
     z-index:100;
@@ -44,14 +62,17 @@ header{
 .logo{
     color:#fff;
     text-decoration:none;
+
     font-size:22px;
     font-weight:900;
+
     letter-spacing:2px;
 }
 
 .back{
     color:#aaa;
     text-decoration:none;
+
     font-size:14px;
 }
 
@@ -60,104 +81,170 @@ header{
 }
 
 
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 main{
-    max-width:1100px;
+    max-width:1150px;
+
     margin:auto;
+
     padding:55px 6%;
 }
 
 
-/* MOVIE */
+/* =========================
+   HERO MOVIE AREA
+========================= */
 
 .movie{
     display:grid;
-    grid-template-columns:280px 1fr;
-    gap:40px;
+
+    grid-template-columns:
+    280px 1fr;
+
+    gap:45px;
+
+    align-items:start;
 }
 
 .poster{
+    width:100%;
     height:410px;
+
     border-radius:18px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     font-size:70px;
+
     background:
     linear-gradient(
         145deg,
         #292c33,
         #111216
     );
+
     border:1px solid #292b31;
+
     overflow:hidden;
+
+    position:relative;
 }
 
 .poster img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     display:block;
 }
 
 
-/* DETAILS */
+.movie-info{
+    min-width:0;
+}
+
 
 .label{
     color:#888;
+
     font-size:12px;
+
     letter-spacing:2px;
+
     margin-bottom:12px;
 }
 
 h1{
-    font-size:clamp(35px,6vw,60px);
+    font-size:
+    clamp(38px,6vw,64px);
+
+    line-height:1.05;
+
     margin-bottom:15px;
+}
+
+.tagline{
+    color:#aaa;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+    max-width:700px;
 }
 
 .meta{
     color:#999;
-    line-height:1.8;
+
+    line-height:1.9;
+
     margin-bottom:25px;
 }
 
 .description{
     color:#aaa;
-    line-height:1.7;
-    max-width:650px;
+
+    line-height:1.8;
+
+    max-width:720px;
 }
 
 
-/* WATCH */
+/* =========================
+   WATCH SECTION
+========================= */
 
 .watch-section{
     margin-top:35px;
+
     padding:25px;
+
     border-radius:16px;
+
     background:#121317;
+
     border:1px solid #292b31;
 }
 
 .watch-section h2{
     margin-bottom:18px;
+
+    font-size:21px;
 }
 
 .buttons{
     display:flex;
+
     flex-wrap:wrap;
+
     gap:12px;
+
     margin-top:18px;
 }
 
 .button{
     display:inline-block;
+
     padding:13px 20px;
+
     border-radius:10px;
+
     background:#fff;
+
     color:#111;
+
     text-decoration:none;
+
     font-weight:bold;
+
     font-size:13px;
 }
 
@@ -165,24 +252,169 @@ h1{
     opacity:.85;
 }
 
+.watch-free-button{
+    background:#7cff9b;
+
+    color:#071008;
+}
+
 .note{
     margin-top:18px;
+
     color:#666;
+
     font-size:11px;
-    line-height:1.5;
+
+    line-height:1.6;
 }
 
 
-/* SIMILAR */
+/* =========================
+   INFORMATION SECTIONS
+========================= */
+
+.info-section{
+    margin-top:55px;
+
+    padding-top:35px;
+
+    border-top:1px solid #202126;
+}
+
+.info-section h2{
+    font-size:25px;
+
+    margin-bottom:16px;
+}
+
+.info-section p{
+    color:#aaa;
+
+    max-width:850px;
+
+    line-height:1.85;
+
+    font-size:15px;
+}
+
+
+/* =========================
+   TWO COLUMN INFO
+========================= */
+
+.info-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+    gap:18px;
+
+    margin-top:55px;
+}
+
+.info-box{
+    padding:23px;
+
+    border-radius:15px;
+
+    background:#111216;
+
+    border:1px solid #25272c;
+}
+
+.info-box h2{
+    font-size:20px;
+
+    margin-bottom:12px;
+}
+
+.info-box p{
+    color:#aaa;
+
+    font-size:14px;
+
+    line-height:1.75;
+}
+
+
+/* =========================
+   THEMES
+========================= */
+
+.theme-list{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:15px;
+}
+
+.theme{
+    padding:8px 13px;
+
+    border-radius:20px;
+
+    background:#191a1f;
+
+    border:1px solid #292b31;
+
+    color:#bbb;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   CAST
+========================= */
+
+.cast-list{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:15px;
+}
+
+.cast{
+    padding:9px 14px;
+
+    background:#191a1f;
+
+    border:1px solid #292b31;
+
+    border-radius:10px;
+
+    color:#ccc;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   SIMILAR MOVIES
+========================= */
 
 .similar{
-    margin-top:60px;
+    margin-top:65px;
+
+    padding-top:35px;
+
+    border-top:1px solid #202126;
 }
 
 .similar-header{
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     margin-bottom:20px;
 }
 
@@ -192,112 +424,155 @@ h1{
 
 .similar-header span{
     color:#777;
+
     font-size:12px;
 }
 
 .similar-grid{
     display:grid;
+
     grid-template-columns:
-    repeat(auto-fill,minmax(150px,1fr));
-    gap:15px;
+    repeat(auto-fill,minmax(155px,1fr));
+
+    gap:16px;
 }
 
 
-/* SIMILAR CARD */
+/* =========================
+   SIMILAR CARD
+========================= */
 
 .card{
     background:#121317;
+
     border:1px solid #25272c;
+
     border-radius:14px;
+
     overflow:hidden;
+
     transition:.25s;
 }
 
 .card:hover{
     transform:translateY(-5px);
+
     border-color:#555;
 }
 
 .small-poster{
-    height:210px;
+    height:215px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     font-size:35px;
+
     background:
     linear-gradient(
         145deg,
         #292c33,
         #111216
     );
+
     overflow:hidden;
 }
 
 .small-poster img{
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
 .card-info{
-    padding:12px;
+    padding:13px;
 }
 
 .card h3{
     font-size:14px;
-    margin-bottom:6px;
+
+    margin-bottom:5px;
 }
 
 .card-meta{
     color:#777;
+
     font-size:11px;
+
     line-height:1.5;
 }
 
 .card-button{
     display:block;
+
     margin-top:10px;
+
     padding:9px;
+
     border-radius:8px;
+
     background:#fff;
+
     color:#111;
+
     text-decoration:none;
+
     text-align:center;
+
     font-size:11px;
+
     font-weight:bold;
 }
 
 
-/* NO SIMILAR */
+/* =========================
+   EMPTY STATE
+========================= */
 
 .no-similar{
     color:#666;
-    padding:25px 0;
+
+    padding:20px 0;
+
     font-size:13px;
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    margin-top:50px;
-    padding:40px 20px;
+    margin-top:60px;
+
+    padding:45px 20px;
+
     text-align:center;
+
     border-top:1px solid #22242a;
+
     color:#777;
+
     font-size:12px;
 }
 
 footer strong{
     color:#fff;
+
     font-size:20px;
+
     letter-spacing:1px;
 }
 
 
-/* TABLET / MOBILE */
+/* =========================
+   TABLET
+========================= */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
     header{
         padding:0 5%;
@@ -309,13 +584,15 @@ footer strong{
 
     .movie{
         grid-template-columns:1fr;
-        gap:25px;
+
+        gap:30px;
     }
 
     .poster{
-        height:380px;
-        max-width:320px;
-        width:100%;
+        width:min(320px,100%);
+
+        height:430px;
+
         margin:auto;
     }
 
@@ -324,16 +601,31 @@ footer strong{
     }
 
     h1{
-        font-size:42px;
+        font-size:45px;
     }
 
-    .similar{
-        margin-top:45px;
+    .info-grid{
+        grid-template-columns:1fr;
     }
 
     .similar-grid{
         grid-template-columns:
+        repeat(3,minmax(0,1fr));
+    }
+
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media(max-width:520px){
+
+    .similar-grid{
+        grid-template-columns:
         repeat(2,minmax(0,1fr));
+
         gap:12px;
     }
 
@@ -341,20 +633,33 @@ footer strong{
         height:220px;
     }
 
+    .poster{
+        height:390px;
+    }
+
+    h1{
+        font-size:40px;
+    }
+
+    .watch-section{
+        padding:20px;
+    }
+
 }
 
 
-/* VERY SMALL DEVICES */
+/* =========================
+   SMALL PHONE
+========================= */
 
-@media(max-width:380px){
-
-    .similar-grid{
-        grid-template-columns:
-        repeat(2,minmax(0,1fr));
-    }
+@media(max-width:360px){
 
     .small-poster{
         height:190px;
+    }
+
+    .card-info{
+        padding:10px;
     }
 
 }
@@ -387,7 +692,9 @@ class="back">
 <main>
 
 
-<!-- MOVIE DETAILS -->
+<!-- =====================
+     MAIN MOVIE
+===================== -->
 
 <div class="movie">
 
@@ -409,6 +716,12 @@ MOVIE DETAILS
 <h1 id="title">
 Loading...
 </h1>
+
+
+<div
+class="tagline"
+id="tagline">
+</div>
 
 
 <div
@@ -444,22 +757,193 @@ id="watchButtons">
 
 
 <div class="note">
-HDMOVIEZ links only to authorized viewing
-sources. Availability may change by region
-and time.
+
+HDMOVIEZ does not host movie files.
+Viewing information should point only
+to authorized sources.
+
+Availability may change by region and time.
+
+</div>
+
+</div>
+
+
 </div>
 
 </div>
 
 
+<!-- =====================
+     OVERVIEW
+===================== -->
+
+<section
+class="info-section">
+
+<h2>
+Movie Overview
+</h2>
+
+<p
+id="overview">
+</p>
+
+</section>
+
+
+<!-- =====================
+     WHY WATCH
+===================== -->
+
+<section
+class="info-section">
+
+<h2>
+Why Watch?
+</h2>
+
+<p
+id="whyWatch">
+</p>
+
+</section>
+
+
+<!-- =====================
+     WHAT MAKES SPECIAL
+===================== -->
+
+<section
+class="info-section">
+
+<h2>
+What Makes It Special
+</h2>
+
+<p
+id="whatMakesItSpecial">
+</p>
+
+</section>
+
+
+<!-- =====================
+     STORY CONTEXT
+===================== -->
+
+<section
+class="info-section">
+
+<h2>
+Story & Context
+</h2>
+
+<p
+id="storyContext">
+</p>
+
+</section>
+
+
+<!-- =====================
+     EXTRA INFORMATION
+===================== -->
+
+<div class="info-grid">
+
+
+<section class="info-box">
+
+<h2>
+🎬 Behind the Movie
+</h2>
+
+<p>
+
+<strong>Director:</strong>
+
+<span id="director">
+—
+</span>
+
+</p>
+
+
+<div
+class="cast-list"
+id="castList">
 </div>
 
+</section>
+
+
+<section class="info-box">
+
+<h2>
+🎭 Themes
+</h2>
+
+<div
+class="theme-list"
+id="themeList">
+</div>
+
+</section>
+
+
+<section class="info-box">
+
+<h2>
+👀 Who Should Watch?
+</h2>
+
+<p
+id="whoShouldWatch">
+</p>
+
+</section>
+
+
+<section class="info-box">
+
+<h2>
+🤔 Who May Not Like It?
+</h2>
+
+<p
+id="whoMayNotLike">
+</p>
+
+</section>
+
 </div>
 
 
-<!-- SIMILAR MOVIES -->
+<!-- =====================
+     EDITORIAL NOTE
+===================== -->
 
-<section class="similar">
+<section
+class="info-section">
+
+<h2>
+📝 HDMOVIEZ Note
+</h2>
+
+<p
+id="editorialNote">
+</p>
+
+</section>
+
+
+<!-- =====================
+     SIMILAR MOVIES
+===================== -->
+
+<section
+class="similar">
 
 
 <div class="similar-header">
@@ -468,7 +952,8 @@ and time.
 Similar Movies
 </h2>
 
-<span id="similarCount">
+<span
+id="similarCount">
 </span>
 
 </div>
@@ -507,7 +992,9 @@ Har Movie, Ek Jagah.
 <script>
 
 
-/* GET MOVIE ID */
+/* =========================
+   GET MOVIE ID
+========================= */
 
 const params =
 new URLSearchParams(
@@ -518,7 +1005,9 @@ const id =
 params.get("id");
 
 
-/* FIND MOVIE */
+/* =========================
+   FIND MOVIE
+========================= */
 
 const movie =
 movies.find(
@@ -526,10 +1015,15 @@ movies.find(
 );
 
 
-/* ELEMENTS */
+/* =========================
+   ELEMENTS
+========================= */
 
 const title =
 document.getElementById("title");
+
+const tagline =
+document.getElementById("tagline");
 
 const meta =
 document.getElementById("meta");
@@ -546,14 +1040,71 @@ document.getElementById("statusBox");
 const watchButtons =
 document.getElementById("watchButtons");
 
+const overview =
+document.getElementById("overview");
+
+const whyWatch =
+document.getElementById("whyWatch");
+
+const whatMakesItSpecial =
+document.getElementById(
+    "whatMakesItSpecial"
+);
+
+const storyContext =
+document.getElementById(
+    "storyContext"
+);
+
+const director =
+document.getElementById(
+    "director"
+);
+
+const castList =
+document.getElementById(
+    "castList"
+);
+
+const themeList =
+document.getElementById(
+    "themeList"
+);
+
+const whoShouldWatch =
+document.getElementById(
+    "whoShouldWatch"
+);
+
+const whoMayNotLike =
+document.getElementById(
+    "whoMayNotLike"
+);
+
+const editorialNote =
+document.getElementById(
+    "editorialNote"
+);
+
 const similarGrid =
-document.getElementById("similarGrid");
+document.getElementById(
+    "similarGrid"
+);
 
 const similarCount =
-document.getElementById("similarCount");
+document.getElementById(
+    "similarCount"
+);
+
+const pageDescription =
+document.getElementById(
+    "pageDescription"
+);
 
 
-/* IMAGE CHECK */
+/* =========================
+   IMAGE CHECK
+========================= */
 
 function isImage(path){
 
@@ -570,7 +1121,9 @@ function isImage(path){
 }
 
 
-/* SHOW MOVIE */
+/* =========================
+   SHOW MOVIE
+========================= */
 
 if(movie){
 
@@ -578,8 +1131,22 @@ if(movie){
     `HDMOVIEZ — ${movie.title}`;
 
 
+    /* SEO DESCRIPTION */
+
+    pageDescription.content =
+    `${movie.title} — movie information,
+    story, cast, themes and legal viewing
+    options on HDMOVIEZ.`;
+
+
+    /* BASIC */
+
     title.textContent =
     movie.title;
+
+
+    tagline.textContent =
+    movie.tagline || "";
 
 
     meta.innerHTML =
@@ -594,7 +1161,7 @@ if(movie){
 
 
     description.textContent =
-    movie.description;
+    movie.overview || "";
 
 
     /* POSTER */
@@ -613,12 +1180,114 @@ if(movie){
     else{
 
         poster.textContent =
-        movie.poster;
+        movie.poster || "🎬";
 
     }
 
 
-    /* WATCH STATUS */
+    /* =====================
+       INFORMATION
+    ===================== */
+
+    overview.textContent =
+    movie.overview || "";
+
+
+    whyWatch.textContent =
+    movie.whyWatch || "";
+
+
+    whatMakesItSpecial.textContent =
+    movie.whatMakesItSpecial || "";
+
+
+    storyContext.textContent =
+    movie.storyContext || "";
+
+
+    director.textContent =
+    movie.director || "—";
+
+
+    whoShouldWatch.textContent =
+    movie.whoShouldWatch || "";
+
+
+    whoMayNotLike.textContent =
+    movie.whoMayNotLike || "";
+
+
+    editorialNote.textContent =
+    movie.editorialNote || "";
+
+
+    /* =====================
+       CAST
+    ===================== */
+
+    castList.innerHTML = "";
+
+
+    if(
+        Array.isArray(movie.cast) &&
+        movie.cast.length
+    ){
+
+        movie.cast.forEach(
+            function(person){
+
+                const item =
+                document.createElement("div");
+
+                item.className =
+                "cast";
+
+                item.textContent =
+                person;
+
+                castList.appendChild(item);
+
+            }
+        );
+
+    }
+
+
+    /* =====================
+       THEMES
+    ===================== */
+
+    themeList.innerHTML = "";
+
+
+    if(
+        Array.isArray(movie.themes) &&
+        movie.themes.length
+    ){
+
+        movie.themes.forEach(
+            function(theme){
+
+                const item =
+                document.createElement("div");
+
+                item.className =
+                "theme";
+
+                item.textContent =
+                theme;
+
+                themeList.appendChild(item);
+
+            }
+        );
+
+    }
+
+
+    /* =====================
+       WATCH STATUS
+    ===================== */
 
     if(movie.status === "FREE"){
 
@@ -723,7 +1392,9 @@ if(movie){
     }
 
 
-    /* SIMILAR MOVIES */
+    /* =========================
+       SIMILAR MOVIES
+    ========================= */
 
     const currentGenres =
     movie.genres || [];
@@ -734,21 +1405,27 @@ if(movie){
 
 
     const similarMovies =
+
     movies
+
     .filter(
-        item => item.id !== movie.id
+        item =>
+        item.id !== movie.id
     )
+
     .map(function(item){
 
         let score = 0;
 
 
-        /* SAME GENRE = STRONG MATCH */
+        /* SAME GENRE */
 
         const sharedGenres =
-        item.genres.filter(
+        (item.genres || []).filter(
             genre =>
-            currentGenres.includes(genre)
+            currentGenres.includes(
+                genre
+            )
         ).length;
 
 
@@ -768,7 +1445,7 @@ if(movie){
         }
 
 
-        /* SAME YEAR RANGE */
+        /* NEAR YEAR */
 
         if(
             Math.abs(
@@ -788,20 +1465,28 @@ if(movie){
         };
 
     })
+
     .filter(
-        item => item.score > 0
+        item =>
+        item.score > 0
     )
+
     .sort(
         (a,b) =>
         b.score - a.score
     )
+
     .slice(0,10)
+
     .map(
-        item => item.movie
+        item =>
+        item.movie
     );
 
 
-    /* SHOW SIMILAR */
+    /* =========================
+       DISPLAY SIMILAR
+    ========================= */
 
     similarCount.textContent =
     similarMovies.length
@@ -809,7 +1494,9 @@ if(movie){
     : "";
 
 
-    if(similarMovies.length === 0){
+    if(
+        similarMovies.length === 0
+    ){
 
         similarGrid.innerHTML =
         `
@@ -820,14 +1507,15 @@ if(movie){
 
     }
 
-
     else{
 
         similarMovies.forEach(
             function(item){
 
                 const card =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
                 card.className =
                 "card";
@@ -836,7 +1524,9 @@ if(movie){
                 let smallPoster;
 
 
-                if(isImage(item.poster)){
+                if(
+                    isImage(item.poster)
+                ){
 
                     smallPoster =
                     `
@@ -851,7 +1541,7 @@ if(movie){
                 else{
 
                     smallPoster =
-                    item.poster;
+                    item.poster || "🎬";
 
                 }
 
@@ -885,7 +1575,9 @@ if(movie){
                 `;
 
 
-                similarGrid.appendChild(card);
+                similarGrid.appendChild(
+                    card
+                );
 
             }
         );
@@ -895,38 +1587,71 @@ if(movie){
 }
 
 
-/* MOVIE NOT FOUND */
+/* =========================
+   MOVIE NOT FOUND
+========================= */
 
 else{
 
     document.title =
     "HDMOVIEZ — Movie Not Found";
 
-
     title.textContent =
     "Movie Not Found";
 
+    tagline.textContent =
+    "";
 
     meta.textContent =
     "";
 
-
     description.textContent =
     "This movie could not be found.";
 
+    overview.textContent =
+    "The requested movie is not available in the HDMOVIEZ database.";
+
+    whyWatch.textContent =
+    "";
+
+    whatMakesItSpecial.textContent =
+    "";
+
+    storyContext.textContent =
+    "";
+
+    director.textContent =
+    "—";
+
+    castList.innerHTML =
+    "";
+
+    themeList.innerHTML =
+    "";
+
+    whoShouldWatch.textContent =
+    "";
+
+    whoMayNotLike.textContent =
+    "";
+
+    editorialNote.textContent =
+    "";
+
+    similarCount.textContent =
+    "";
 
     similarGrid.innerHTML =
     `
     <div class="no-similar">
-    Please return to the movies page
-    and select a valid movie.
+        Please return to the movies page
+        and select a valid movie.
     </div>
     `;
 
 }
 
 </script>
-
 
 </body>
 
