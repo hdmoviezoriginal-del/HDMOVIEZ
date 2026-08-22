@@ -16,6 +16,22 @@ name="description"
 id="pageDescription"
 content="Movie information, reviews, genres and legal viewing options on HDMOVIEZ.">
 
+<link
+  id="canonicalUrl"
+  rel="canonical"
+  href="https://hdmoviezoriginal-del.github.io/HDMOVIEZ/movie.html"
+>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HDMOVIEZ">
+<meta property="og:title" id="ogTitle" content="HDMOVIEZ — Movie">
+<meta property="og:description" id="ogDescription" content="Movie information, reviews, genres and legal viewing options on HDMOVIEZ.">
+<meta property="og:url" id="ogUrl" content="https://hdmoviezoriginal-del.github.io/HDMOVIEZ/movie.html">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" id="twitterTitle" content="HDMOVIEZ — Movie">
+<meta name="twitter:description" id="twitterDescription" content="Movie information, reviews, genres and legal viewing options on HDMOVIEZ.">
+
 <style>
 
 *{
@@ -1031,6 +1047,60 @@ if(movie){
 
     document.title =
     `HDMOVIEZ — ${movie.title}`;
+
+    const moviePageUrl =
+    `${window.location.origin}${window.location.pathname}?id=${encodeURIComponent(movie.id)}`;
+
+const canonicalUrl =
+    document.getElementById("canonicalUrl");
+
+const ogTitle =
+    document.getElementById("ogTitle");
+
+const ogDescription =
+    document.getElementById("ogDescription");
+
+const ogUrl =
+    document.getElementById("ogUrl");
+
+const twitterTitle =
+    document.getElementById("twitterTitle");
+
+const twitterDescription =
+    document.getElementById("twitterDescription");
+
+const seoDescription =
+    `${movie.title} (${movie.year}) — ${movie.language} ${movie.genres.join(", ")}. Movie information, story context and legal viewing options on HDMOVIEZ.`;
+
+canonicalUrl.setAttribute(
+    "href",
+    moviePageUrl
+);
+
+ogTitle.setAttribute(
+    "content",
+    `HDMOVIEZ — ${movie.title}`
+);
+
+ogDescription.setAttribute(
+    "content",
+    seoDescription
+);
+
+ogUrl.setAttribute(
+    "content",
+    moviePageUrl
+);
+
+twitterTitle.setAttribute(
+    "content",
+    `HDMOVIEZ — ${movie.title}`
+);
+
+twitterDescription.setAttribute(
+    "content",
+    seoDescription
+);
 
 
     /* DESCRIPTION */
